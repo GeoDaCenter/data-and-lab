@@ -87,6 +87,13 @@ In order to compile the assets and run Jekyll on local you need to follow those 
 - Run `sudo npm install -g gulp gulp-cli`
 - Run `sudo gulp`
 
+Alternatively you can use docker to spin up the app. Simple run 
+
+```
+docker-compose up
+```
+
+Then navigaate to http://localhost:5000
 
 ## License
 
