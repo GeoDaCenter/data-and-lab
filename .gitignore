@@ -6,3 +6,5 @@ _site
 
 node_modules/
 .Rproj.user/
+.vscode/
+package-lock.json
