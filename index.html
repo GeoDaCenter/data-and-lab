@@ -3,958 +3,1135 @@ layout: default
 ---
 
 
-<main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-  <article class="post-content">
-    <div class="tags">
-      <h2 align="center"><b>Filter Sample Data by Category:</b></h2>
-      {% assign mytags = "economics:health
-  :crime
-  :housing
-  :politics
-  :demographics
-  :environment
-  :development
-  :simulation
-  :polygons
-  :points
-  :csv/txt
-  :<500
-  :500-5,000
-  :5,000+
-  :larger areas
-  :smaller areas
-  :rates
-  :space-time
-  :ESDA
-  :regression
-  :Census
-  :open data
-  :research
-  :textbook
-  :Anselin lab" | split: ":" %}
-      {% for tag in mytags %}
-        <a href="{{site.baseurl}}/tags/#{{ tag | slugify }}">{{ tag }}</a>
-      {% endfor %}
-    </div>
-  </article>
+<main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope"
+	itemtype="http://schema.org/Blog">
+	<article class="post-content">
+		<div class="tags">
+			<h2 align="center"><b>Filter Sample Data by Category:</b></h2>
+			{% assign mytags = "economics:health
+			:crime
+			:housing
+			:politics
+			:demographics
+			:environment
+			:development
+			:simulation
+			:polygons
+			:points
+			:csv/txt
+			:<500 :500-5,000 :5,000+ :larger areas :smaller areas :rates :space-time :ESDA :regression :Census :open data
+				:research :textbook :Anselin lab" | split: ":" %} {% for tag in mytags %} <a
+				href="{{site.baseurl}}/tags/#{{ tag | slugify }}">{{ tag }}</a>
+				{% endfor %}
+		</div>
+	</article>
 
-  <style>
-  .samples a:link, .samples a:visited {
-    color: #005f97;
-    text-decoration: none;
-  }
-  .samples a:hover {
-    color: #CCC;
-  }
-  </style>
+	<style>
+		.samples a:link,
+		.samples a:visited {
+			color: #005f97;
+			text-decoration: none;
+		}
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-72724100-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+		.samples a:hover {
+			color: #CCC;
+		}
+	</style>
 
-<article class="samples">
-    <div>
-      <h2 align="center">
-        <b>View List of Sample Data (<a href="https://spatial.uchicago.edu/content/about-sample-data" target="_blank">More Info</a>):</b>
-      </h2>
-    </div>
-    <div style="text-align:center;">
-     <table>
-  	    <caption align="center" style="margin:10px;">
-          These sample data are referenced in the <a href="https://spatial.uchicago.edu/content/spatial-analysis-tutorials" target="_blank">tutorials</a> for&nbsp;<a href="http://geodacenter.github.io/documentation.html" target="_blank">GeoDa</a>, <a href="https://geodacenter.github.io/GeoDaSpace/resources.html" target="_blank">GeoDaSpace</a>, and <a href="/docs/CAST_HowToGuide.pdf" target="_blank">CAST</a>.
-        </caption>
-		<caption align="center" style="margin:10px;">
-			Alternative download links for users in China（中国)：<a href="https://gitee.com/geoda/data-and-lab/tree/gh-pages/data">https://gitee.com/geoda/data-and-lab/tree/gh-pages/data</a>
-        </caption>
-        <thead>
-      		<tr>
-      			<th>Name</th>
-      			<th style="min-width:500px">Description</th>
-      			<th>#Obs</th>
-      			<th>#Vars</th>
-      			<th>Download</th>
-      		</tr>
-      	</thead>
-        <tbody>
-      		<tr>
-      			<td><a href="airbnb/" target="_blank">AirBnB</a></td>
-      			<td>Airbnb rentals, socioeconomics, and crime in Chicago</td>
-      			<td>77</td>
-      			<td>20</td>
-      			<td><a href="data/airbnb.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-Airbnb', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Airbnb');">airbnb.zip</a></td>
-      		</tr>
-      		<tr>
-      			<td><a href="atlanta_old/" target="_blank">Atlanta</a></td>
-      			<td>Atlanta, GA region homicide counts and rates</td>
-            <td>90</td>
-      			<td>23</td>
-      			<td><a href="data/atlanta_hom.zip" target="_self" title="atlanta_hom.zip" onclick="ga('send', 'event', 'GeoDa-Atlanta', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Atlanta');">atlanta_hom.zip</a></td>
-      		</tr>
-      		<tr>
-      			<td><a href="baltim/" target="_blank">Baltimore</a></td>
-      			<td>Baltimore house sales prices and hedonics</td>
-      			<td>211</td>
-      			<td>17</td>
-      			<td><a href="data/baltimore.zip" target="_self" title="baltimore.zip" onclick="ga('send', 'event', 'GeoDa-Balt', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Balt');">baltimore.zip</a></td>
-      		</tr>
+	<script>
+		window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+		ga('create', 'UA-72724100-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-	              <tr>
-      			<td><a href="boston-housing/" target="_blank">Bostonhsg</a></td>
-      			<td>Boston housing and neighborhood data</td>
-      			<td>506</td>
-      			<td>23</td>
-      			<td><a href="data/boston.zip" target="_self" title="boston.zip" onclick="ga('send', 'event', 'GeoDa-Boston', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Boston');">boston.zip</a></td>
-      		</tr>
-      		<tr>
-      			<td><a href="buenos-aires_old/" target="_blank">Buenosaires</a></td>
-      			<td>
-      				Electoral Data for 1999 Argentinean Elections</td>
-      			<td>
-      				209</td>
-      			<td>
-      				21</td>
-      			<td>
-      				<a href="data/buenosaires.zip" target="_self" title="buenosaires.zip" onclick="ga('send', 'event', 'GeoDa-BuenosAires', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for BuenosAires');">buenosaires.zip</a></td>
-      		</tr>
-	  
-          <tr>
-            <td><a href="1-source-and-description/" target="_blank">Cars</a></td>
-            <td>2011 abandoned vehicles in Chicago (311 complaints).</td>
-            <td>137,867</td>
-            <td>21</td>
-            <td><a href="data/Abandoned_Vehicles_Map.csv" target="_self" onclick="ga('send', 'event', 'GeoDa-Cars', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Cars');">cars.zip</a></td>
-            </tr>
+	<article class="samples">
+		<div>
+			<h2 align="center">
+				<b>View List of Sample Data (<a href="https://spatial.uchicago.edu/content/about-sample-data"
+						target="_blank">More Info</a>):</b>
+			</h2>
+		</div>
+		<div style="text-align:center;">
+			<table>
+				<caption align="center" style="margin:10px;">
+					These sample data are referenced in the <a
+						href="https://spatial.uchicago.edu/content/spatial-analysis-tutorials" target="_blank">tutorials</a>
+					for&nbsp;<a href="http://geodacenter.github.io/documentation.html" target="_blank">GeoDa</a>, <a
+						href="https://geodacenter.github.io/GeoDaSpace/resources.html" target="_blank">GeoDaSpace</a>, and <a
+						href="/docs/CAST_HowToGuide.pdf" target="_blank">CAST</a>.
+				</caption>
+				<caption align="center" style="margin:10px;">
+					Alternative download links for users in China（中国)：<a
+						href="https://gitee.com/geoda/data-and-lab/tree/gh-pages/data">https://gitee.com/geoda/data-and-lab/tree/gh-pages/data</a>
+				</caption>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th style="min-width:500px">Description</th>
+						<th>#Obs</th>
+						<th>#Vars</th>
+						<th>Download</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="airbnb/" target="_blank">AirBnB</a></td>
+						<td>Airbnb rentals, socioeconomics, and crime in Chicago</td>
+						<td>77</td>
+						<td>20</td>
+						<td><a href="data/airbnb.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-Airbnb', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Airbnb');">airbnb.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="atlanta_old/" target="_blank">Atlanta</a></td>
+						<td>Atlanta, GA region homicide counts and rates</td>
+						<td>90</td>
+						<td>23</td>
+						<td><a href="data/atlanta_hom.zip" target="_self" title="atlanta_hom.zip"
+								onclick="ga('send', 'event', 'GeoDa-Atlanta', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Atlanta');">atlanta_hom.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="baltim/" target="_blank">Baltimore</a></td>
+						<td>Baltimore house sales prices and hedonics</td>
+						<td>211</td>
+						<td>17</td>
+						<td><a href="data/baltimore.zip" target="_self" title="baltimore.zip"
+								onclick="ga('send', 'event', 'GeoDa-Balt', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Balt');">baltimore.zip</a>
+						</td>
+					</tr>
 
-	        		<tr>
-      			<td>
-      				<a href="charleston-1_old/" target="_blank">Charleston1</a></td>
-      			<td>
-      				2000 Census Tract Data for Charleston, SC MSA and counties</td>
-      			<td>
-      				117</td>
-      			<td>
-      				30</td>
-      			<td>
-      				<a href="data/CharlestonMSA.zip" target="_self" title="CharlestonMSA.zip" onclick="ga('send', 'event', 'GeoDa-Charleston', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Charleston');">CharlestonMSA.zip</a></td>
-      		</tr>
-      		<tr>
-      			<td>
-      				<a href="charleston2/" target="_blank">Charleston2</a></td>
-      			<td>
-      				1998 and 2001 Zip Code Business Patterns (Census Bureau) for Charleston, SC MSA</td>
-      			<td>
-      				44</td>
-      			<td>
-      				97</td>
-      			<td>
-      				<a href="data/CharlestonMSA2.zip" target="_self" title="CharlestonMSA2.zip" onclick="ga('send', 'event', 'GeoDa-Charleston2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Charleston2');">CharlestonMSA2.zip</a></td>
-      		</tr>
-	
-	  
-<tr>
-    <td>
-        <a href="comarea_vars/" target="_blank">Chicago Health</a></td>
-            <td>
-            Chicago Health + Socio-Economics</td>
-            <td>
-            77</td>
-            <td>
-            86</td>
-            <td>
-            <a href="data/comarea.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-ChiHealth', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for ChiHealth');">comarea.zip</a></td>
-            </tr>
+					<tr>
+						<td><a href="boston-housing/" target="_blank">Bostonhsg</a></td>
+						<td>Boston housing and neighborhood data</td>
+						<td>506</td>
+						<td>23</td>
+						<td><a href="data/boston.zip" target="_self" title="boston.zip"
+								onclick="ga('send', 'event', 'GeoDa-Boston', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Boston');">boston.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="buenos-aires_old/" target="_blank">Buenosaires</a></td>
+						<td>
+							Electoral Data for 1999 Argentinean Elections</td>
+						<td>
+							209</td>
+						<td>
+							21</td>
+						<td>
+							<a href="data/buenosaires.zip" target="_self" title="buenosaires.zip"
+								onclick="ga('send', 'event', 'GeoDa-BuenosAires', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for BuenosAires');">buenosaires.zip</a>
+						</td>
+					</tr>
 
-<tr>
-    <td>
-        <a href="commpop/" target="_blank">Chicago commpop</a></td>
-            <td>
-            Chicago Community Area Population Percent Change for 2000 and 2010</td>
-            <td>
-            77</td>
-            <td>
-            8</td>
-            <td>
-            <a href="data/chicago_commpop.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-chicago_commpop', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for chicago_commpop');">chicago_commpop.zip</a></td>
-            </tr>
-            
-<tr>
-    <td>
-        <a href="parcels/" target="_blank">Chicago parcels</a></td>
-            <td>
-            Tax parcel polygons of Cook county </td>
-            <td>
-            592,521</td>
-            <td>
-            5</td>
-            <td>
-            <a href="https://uchicago.box.com/s/j2d2ch5uvckse24y8l7vh9198wnq216i" target="_self" onclick="ga('send', 'event', 'GeoDa-chicago_parcels', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for chicago_parcels');">chicago_parcels.zip</a></td>
-            </tr>
-            
-<tr>
-	  
-            <tr>
-            <td><a href="FLMA/" target="_blank">Chile Labor</a></td>
-            <td>Labor Markets in Chile (1982-2002)</td>
-            <td>141</td>
-            <td>62</td>
-            <td><a href="data/flma.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-FLMA', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for FLMA');">FLMA_updated.zip</a></td>
-            </tr>
+					<tr>
+						<td><a href="1-source-and-description/" target="_blank">Cars</a></td>
+						<td>2011 abandoned vehicles in Chicago (311 complaints).</td>
+						<td>137,867</td>
+						<td>21</td>
+						<td><a href="data/Abandoned_Vehicles_Map.csv" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-Cars', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Cars');">cars.zip</a>
+						</td>
+					</tr>
 
-
-            <tr>
-                <td>
-                    <a href="CHIM/" target="_blank">Chile Migration</a></td>
-                        <td>
-                        Internal Migration in Chile (1977-2002)</td>
-                        <td>
-                        304</td>
-                        <td>
-                        10</td>
-                        <td>
-                        <a href="https://uchicago.box.com/s/yqc97nq23hoeeqo5lkc2grlg98skokgk" target="_self" onclick="ga('send', 'event', 'GeoDa-CHIM', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for CHIM');">CHIM.zip</a></td>
-                        </tr>
+					<tr>
+						<td>
+							<a href="charleston-1_old/" target="_blank">Charleston1</a>
+						</td>
+						<td>
+							2000 Census Tract Data for Charleston, SC MSA and counties</td>
+						<td>
+							117</td>
+						<td>
+							30</td>
+						<td>
+							<a href="data/CharlestonMSA.zip" target="_self" title="CharlestonMSA.zip"
+								onclick="ga('send', 'event', 'GeoDa-Charleston', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Charleston');">CharlestonMSA.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="charleston2/" target="_blank">Charleston2</a>
+						</td>
+						<td>
+							1998 and 2001 Zip Code Business Patterns (Census Bureau) for Charleston, SC MSA</td>
+						<td>
+							44</td>
+						<td>
+							97</td>
+						<td>
+							<a href="data/CharlestonMSA2.zip" target="_self" title="CharlestonMSA2.zip"
+								onclick="ga('send', 'event', 'GeoDa-Charleston2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Charleston2');">CharlestonMSA2.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="comarea_vars/" target="_blank">Chicago Health</a>
+						</td>
+						<td>Chicago Health + Socio-Economics</td>
+						<td>77</td>
+						<td>86</td>
+						<td>
+							<a href="data/comarea.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-ChiHealth', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for ChiHealth');">comarea.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="commpop/" target="_blank">Chicago commpop</a>
+						</td>
+						<td>
+							Chicago Community Area Population Percent Change for 2000 and 2010</td>
+						<td>77</td>
+						<td>8</td>
+						<td>
+							<a href="data/chicago_commpop.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-chicago_commpop', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for chicago_commpop');">chicago_commpop.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="parcels/" target="_blank">Chicago parcels</a></td>
+						<td>Tax parcel polygons of Cook county </td>
+						<td>592,521</td>
+						<td>5</td>
+						<td>
+							<a href="https://uchicago.box.com/s/j2d2ch5uvckse24y8l7vh9198wnq216i" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-chicago_parcels', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for chicago_parcels');">chicago_parcels.zip</a>
+						</td>
+					</tr>
+					<tr>
+					<tr>
+						<td><a href="FLMA/" target="_blank">Chile Labor</a></td>
+						<td>Labor Markets in Chile (1982-2002)</td>
+						<td>141</td>
+						<td>62</td>
+						<td><a href="data/flma.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-FLMA', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for FLMA');">FLMA_updated.zip</a>
+						</td>
+					</tr>
 
 
-
-            <tr>
-                <td>
-                    <a href="walnut_hills/" target="_blank">Cincinnati</a></td>
-                <td>
-                    2008 Cincinnati Crime + Socio-Demographics</td>
-                <td>
-                    457</td>
-                <td>
-                    89</td>
-                <td>
-                    <a href="data/walnuthills_updated.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-Cincinnati', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Cincinnati');">walnuthills_updated.zip</a></td>
-            </tr>
-
-            <tr>
-            <td>
-            <a href="clev_sls_154_core/" target="_blank">Cleveland</a></td>
-            <td>
-            2015 sales prices of homes in Cleveland, OH.</td>
-            <td>
-            205</td>
-            <td>
-            9</td>
-            <td>
-            <a href="data/cleveland.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-Cleveland', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Cleveland');">cleveland.zip</a></td>
-            </tr>
+					<tr>
+						<td>
+							<a href="CHIM/" target="_blank">Chile Migration</a>
+						</td>
+						<td>
+							Internal Migration in Chile (1977-2002)</td>
+						<td>
+							304</td>
+						<td>
+							10</td>
+						<td>
+							<a href="https://uchicago.box.com/s/yqc97nq23hoeeqo5lkc2grlg98skokgk" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-CHIM', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for CHIM');">CHIM.zip</a>
+						</td>
+					</tr>
 
 
 
-      		<tr>
-      			<td>
-      				<a href="columbus/" target="_blank">Columbus</a></td>
-      			<td>
-      				Columbus neighborhood crime</td>
-      			<td>
-      				49</td>
-      			<td>
-      				20</td>
-      			<td>
-      				<a href="data/columbus.zip" target="_self" title="columbus.zip" onclick="ga('send', 'event', 'GeoDa-columbus', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for columbus');">columbus.zip</a></td>
-      		</tr>
+					<tr>
+						<td>
+							<a href="walnut_hills/" target="_blank">Cincinnati</a>
+						</td>
+						<td>
+							2008 Cincinnati Crime + Socio-Demographics</td>
+						<td>
+							457</td>
+						<td>
+							89</td>
+						<td>
+							<a href="data/walnuthills_updated.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-Cincinnati', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Cincinnati');">walnuthills_updated.zip</a>
+						</td>
+					</tr>
 
-
-      			<td>
-      				<a href="denver/" target="_blank">Denver</a></td>
-      			<td>
-      				Demographics and housing in Denver neighborhoods.</td>
-      			<td>
-      				75</td>
-      			<td>
-      				55</td>
-      			<td>
-      				<a href="data/denver.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-Denver', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Denver');">denver.zip</a></td>
-      		</tr>
-
-
-<tr>
-    <td>
-        <a href="county_election_2012_2016-variables/" target="_blank">Elections</a></td>
-            <td>
-            2012 and 2016 Presidential Elections</td>
-            <td>
-            3,108</td>
-            <td>
-            74</td>
-            <td>
-            <a href="data/election.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-Elections', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Elections');">election.zip</a></td>
-            </tr>
+					<tr>
+						<td>
+							<a href="clev_sls_154_core/" target="_blank">Cleveland</a>
+						</td>
+						<td>
+							2015 sales prices of homes in Cleveland, OH.</td>
+						<td>
+							205</td>
+						<td>
+							9</td>
+						<td>
+							<a href="data/cleveland.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-Cleveland', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Cleveland');">cleveland.zip</a>
+						</td>
+					</tr>
 
 
 
-<tr>
-      			<td>
-      				<a href="grid100/" target="_blank">Grid100</a></td>
-      			<td>
-      				Grid with simulated variables</td>
-      			<td>
-      				100</td>
-      			<td>
-      				34</td>
-      			<td>
-      				<a href="data/grid100.zip" target="_self" title="grid100.zip" onclick="ga('send', 'event', 'GeoDa-Grid100', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Grid100');">grid100.zip</a></td>
-      		</tr>
-
-<tr>
-    <td>
-        <a href="chicago_sup_vars/" target="_blank">Groceries</a></td>
-            <td>
-            2015 Chicago supermarkets</td>
-            <td>
-            148</td>
-            <td>
-            7</td>
-            <td>
-            <a href="data/grocery.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-Grocery', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Grocery');">grocery.zip</a></td>
-            </tr>
+					<tr>
+						<td>
+							<a href="columbus/" target="_blank">Columbus</a>
+						</td>
+						<td>
+							Columbus neighborhood crime</td>
+						<td>
+							49</td>
+						<td>
+							20</td>
+						<td>
+							<a href="data/columbus.zip" target="_self" title="columbus.zip"
+								onclick="ga('send', 'event', 'GeoDa-columbus', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for columbus');">columbus.zip</a>
+						</td>
+					</tr>
 
 
+					<td>
+						<a href="denver/" target="_blank">Denver</a>
+					</td>
+					<td>
+						Demographics and housing in Denver neighborhoods.</td>
+					<td>
+						75</td>
+					<td>
+						55</td>
+					<td>
+						<a href="data/denver.zip" target="_self"
+							onclick="ga('send', 'event', 'GeoDa-Denver', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Denver');">denver.zip</a>
+					</td>
+					</tr>
 
 
-<tr>
-      			<td>
-      				<a href="Guerry/" target="_blank">Guerry</a></td>
-      			<td>
-      				Moral statistics of France (Guerry, 1833)</td>
-      			<td>
-      				85</td>
-      			<td>
-      				23</td>
-      			<td>
-      				<a href="data/guerry.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-Guerry', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Guerry');">guerry.zip</a></td>
-      		</tr>
+					<tr>
+						<td>
+							<a href="county_election_2012_2016-variables/" target="_blank">Elections</a>
+						</td>
+						<td>
+							2012 and 2016 Presidential Elections</td>
+						<td>
+							3,108</td>
+						<td>
+							74</td>
+						<td>
+							<a href="data/election.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-Elections', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Elections');">election.zip</a>
+						</td>
+					</tr>
 
 
- <tr>
-     <td>
-         <a href="co_income_diversity_variables/" target="_blank">Health+</a></td>
-             <td>
-             2000 Health, Income + Diversity</td>
-             <td>
-             3,984</td>
-             <td>
-             64</td>
-             <td>
-             <a href="data/income_diversity.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-IncDiv', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for IncDiv');">income_diversity.zip</a></td>
-             </tr>
 
+					<tr>
+						<td>
+							<a href="grid100/" target="_blank">Grid100</a>
+						</td>
+						<td>
+							Grid with simulated variables</td>
+						<td>
+							100</td>
+						<td>
+							34</td>
+						<td>
+							<a href="data/grid100.zip" target="_self" title="grid100.zip"
+								onclick="ga('send', 'event', 'GeoDa-Grid100', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Grid100');">grid100.zip</a>
+						</td>
+					</tr>
 
- <tr>
-     <td>
-         <a href="healthindicators-variables/" target="_blank">Health Indicators</a></td>
-             <td>
-             Chicago Health Indicators (2005-11)</td>
-             <td>
-             77</td>
-             <td>
-             31</td>
-             <td>
-             <a href="data/healthIndicators.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-HealthInd', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for HealthInd');">healthIndicators.zip</a></td>
-             </tr>
+					<tr>
+						<td>
+							<a href="chicago_sup_vars/" target="_blank">Groceries</a>
+						</td>
+						<td>
+							2015 Chicago supermarkets</td>
+						<td>
+							148</td>
+						<td>
+							7</td>
+						<td>
+							<a href="data/grocery.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-Grocery', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Grocery');">grocery.zip</a>
+						</td>
+					</tr>
 
 
 
 
- <tr>
-      			<td>
-      				<a href="hickory1/" target="_blank">Hickory1</a></td>
-      			<td>
-      				2000 Census Tract Data for Hickory, NC MSA and counties</td>
-      			<td>
-      				68</td>
-      			<td>
-      				30</td>
-      			<td>
-      				<a href="data/HickoryMSA.zip" target="_self" title="HickoryMSA.zip" onclick="ga('send', 'event', 'GeoDa-Hickory', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Hickory');">HickoryMSA.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="hickory2/" target="_blank">Hickory2</td>
-      			<td>
-      				1998 and 2001 Zip Code Business Patterns (Census Bureau) for Hickory, NC MSA</td>
-      			<td>
-      				29</td>
-      			<td>
-      				55</td>
-      			<td>
-      				<a href="data/HickoryMSA2.zip" target="_self" title="HickoryMSA2.zip" onclick="ga('send', 'event', 'GeoDa-Hickory2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Hickory2');">HickoryMSA2.zip</a></td>
-      		</tr>
+					<tr>
+						<td>
+							<a href="Guerry/" target="_blank">Guerry</a>
+						</td>
+						<td>
+							Moral statistics of France (Guerry, 1833)</td>
+						<td>
+							85</td>
+						<td>
+							23</td>
+						<td>
+							<a href="data/guerry.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-Guerry', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Guerry');">guerry.zip</a>
+						</td>
+					</tr>
 
 
-  <tr>
-      <td>
-          <a href="KingCounty-HouseSales2015/" target="_blank">Home Sales</a></td>
-              <td>
-              2014-15 Home Sales in King County, WA</td>
-              <td>
-              21,613</td>
-              <td>
-              21</td>
-              <td>
-              <a href="data/kingcounty.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-KingCty', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Kingcty');">kingcounty.zip</a></td>
-              </tr>
+					<tr>
+						<td>
+							<a href="co_income_diversity_variables/" target="_blank">Health+</a>
+						</td>
+						<td>
+							2000 Health, Income + Diversity</td>
+						<td>
+							3,984</td>
+						<td>
+							64</td>
+						<td>
+							<a href="data/income_diversity.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-IncDiv', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for IncDiv');">income_diversity.zip</a>
+						</td>
+					</tr>
 
 
-
-  <tr>
-      			<td>
-      				<a href="houston/" target="_blank">Houston</a></td>
-      			<td>
-      				Houston, TX region homicide counts and rates</td>
-      			<td>
-      				52</td>
-      			<td>
-      				23</td>
-      			<td>
-      				<a href="data/houston_hom.zip" target="_self" title="houston_hom.zip" onclick="ga('send', 'event', 'GeoDa-Houston', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Houston');">houston_hom.zip</a></td>
-      		</tr>
-      		<tr>
-      			<td>
-      				<a href="juvenile/" target="_blank">Juvenile</a></td>
-      			<td>
-      				Cardiff juvenile delinquent residences</td>
-      			<td>
-      				168</td>
-      			<td>
-      				3</td>
-      			<td>
-      				<a href="data/juvenile.zip" target="_self" title="juvenile.zip" onclick="ga('send', 'event', 'GeoDa-Juvenile', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Juvenile');">juvenile.zip</a></td>
-      		</tr>
-      		<tr>
-      			<td>
-      				<a href="lansing1/" target="_blank">Lansing1</a></td>
-      			<td>
-      				2000 Census Tract Data for Lansing, MI MSA and counties</td>
-      			<td>
-      				117</td>
-      			<td>
-      				30</td>
-      			<td>
-      				<a href="data/LansingMSA.zip" target="_self" title="LansingMSA.zip" onclick="ga('send', 'event', 'GeoDa-Lansing', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Lansing');">LansingMSA.zip</a></td>
-      		</tr>
-      		<tr>
-      			<td>
-      				<a href="lansing2/" target="_blank">Lansing2</a></td>
-      			<td>
-      				1998 and 2001 Zip Code Business Patterns (Census Bureau) for Lansing, MI MSA</td>
-      			<td>
-      				46</td>
-      			<td>
-      				55</td>
-      			<td>
-      				<a href="data/LansingMSA2.zip" target="_self" title="LansingMSA2.zip" onclick="ga('send', 'event', 'GeoDa-Lansing2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Lansing2');">LansingMSA2.zip</a></td>
-      		</tr>
-      		<tr>
-      			<td>
-      				<a href="ozone/" target="_blank">Laozone</a></td>
-      			<td>
-      				Ozone measures at monitoring stations in Los Angeles basin</td>
-      			<td>
-      				32</td>
-      			<td>
-      				8</td>
-      			<td>
-      				<a href="data/laozone.zip" target="_self" title="laozone.zip" onclick="ga('send', 'event', 'GeoDa-Laozone', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Laozone');">laozone.zip</a></td>
-      		</tr>
-      		
-    	<tr>
-      			<td>
-      				<a href="lasrosas/" target="_blank">LasRosas</a></td>
-      			<td>
-      				Corn yield, fertilizer and field data for precision agriculture, Argentina, 1999</td>
-      			<td>
-      				1,738</td>
-      			<td>
-      				34</td>
-      			<td>
-      				<a href="data/lasrosas.zip" target="_self" title="lasrosas.zip" onclick="ga('send', 'event', 'GeoDa-Lasrosas', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Lasrosas');">lasrosas.zip</a></td>
-      		</tr>
-
-
-   <tr>
-       <td>
-           <a href="liq_chicago/" target="_blank">Liquor Stores</a></td>
-               <td>
-               2015 Chicago Liquor Stores</td>
-               <td>
-               571</td>
-               <td>
-               2</td>
-               <td>
-               <a href="data/liquor.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-Liquor', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Liquor');">liquor.zip</a></td>
-               </tr>
+					<tr>
+						<td>
+							<a href="healthindicators-variables/" target="_blank">Health Indicators</a>
+						</td>
+						<td>
+							Chicago Health Indicators (2005-11)</td>
+						<td>
+							77</td>
+						<td>
+							31</td>
+						<td>
+							<a href="data/healthIndicators.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-HealthInd', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for HealthInd');">healthIndicators.zip</a>
+						</td>
+					</tr>
 
 
 
-   <tr>
-      			<td>
-      				<a href="colomb_malaria/" target="_blank">Malaria</a></td>
-      			<td>
-      				Malaria incidence and population (1973, 95, 93 censuses and projections until 2005) &nbsp &nbsp &nbsp</td>
-      			<td>
-      				1,068</td>
-      			<td>
-      				50</td>
-      			<td>
-      				<a href="data/malariacolomb.zip" target="_self" title="Malaria Columbia" onclick="ga('send', 'event', 'GeoDa-Malaria', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for BMalaria');">Malaria-Colombia.zip</a></td>
-      		</tr>
-	<tr>
-      			<td>
-      				<a href="milwaukee1/" target="_blank">Milwaukee1</a></td>
-      			<td>
-      				2000 Census Tract Data for Milwaukee, WI MSA</td>
-      			<td>
-      				417</td>
-      			<td>
-      				31</td>
-      			<td>
-      				<a href="data/MilwaukeeMSA.zip" target="_self" title="MilwaukeeMSA.zip" onclick="ga('send', 'event', 'GeoDa-Milwaukee', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Milwaukee');">MilwaukeeMSA.zip</a></td>
-  </tr>
-  
-  <tr>
-      			<td>
-      				<a href="milwaukee2/" target="_blank">Milwaukee2</a></td>
-      			<td>
-      				1998 and 2001 Zip Code Business Patterns (Census Bureau) for Milwaukee, WI MSA</td>
-      			<td>
-      				83</td>
-      			<td>
-      				55</td>
-      			<td>
-      				<a href="data/MilwaukeeMSA2.zip" target="_self" title="MilwaukeeMSA2.zip" onclick="ga('send', 'event', 'GeoDa-Milwaukee2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Milwaukee2');">MilwaukeeMSA2.zip</a></td>
-    	</tr>
-      		
 
-  	<tr>
-      			<td>
-      				<a href="ncovr/" target="_blank">NCOVR</a></td>
-      			<td>
-      				US county homicides 1960-1990</td>
-      			<td>3,085</td>
-      			<td>
-      				69</td>
-      			<td>
-      				<a href="data/ncovr.zip" target="_self" title="ncovr.zip" onclick="ga('send', 'event', 'GeoDa-NCOVR', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NCOVR');">ncovr.zip</a></td>
-      	</tr>
-      		
-    
-    	<tr>
-      			<td>
-      				<a href="natregimes/" target="_blank">Natregimes</a></td>
-      			<td>
-      				NCOVR with regimes (book/PySAL)</td>
-      			<td>
-      				3,085</td>
-      			<td>
-      				73</td>
-      			<td>
-      				<a href="data/natregimes.zip" target="_self" onclick="ga('send', 'event', 'GeoDa-NatRegimes', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NatRegimes');">natregimes.zip</a></td>
-      	</tr>
-      		
-      	<tr>
-      			<td>
-      				<a href="ndvi/" target="_blank">NDVI</a></td>
-      			<td>
-      				Normalized Difference Vegetation Index grid</td>
-      			<td>
-      				49</td>
-      			<td>
-      				5</td>
-      			<td>
-      				<a href="data/ndvi.zip" target="_self" title="ndvi.zip" onclick="ga('send', 'event', 'GeoDa-NDVI', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NDVI');">ndvi.zip</a></td>
-    </tr>
-      	
-    <tr>
-      			<td>
-      				<a href="nepal/" target="_blank">Nepal</a></td>
-      			<td>
-      				Health, poverty and education indicators for Nepal districts</td>
-      			<td>
-      				75</td>
-      			<td>
-      				61</td>
-      			<td>
-      				<a href="data/nepal.zip" target="_self" title="nepal.zip" onclick="ga('send', 'event', 'GeoDa-Nepal', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Nepal');">nepal.zip</a></td>
-    </tr>
-      		
-  <tr>
-      			<td>
-      				<a href="nyc/" target="_blank">NYC</a></td>
-      			<td>
-      				Demographic and housing data for New York City subboroughs, 2002-09</td>
-      			<td>
-      				55</td>
-      			<td>
-      				34</td>
-      			<td>
-      				<a href="/data/nyc.zip" target="_self" title="nyc.zip" onclick="ga('send', 'event', 'GeoDa-NYC', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NYC');">nyc.zip</a></td>
-  	</tr>
+					<tr>
+						<td>
+							<a href="hickory1/" target="_blank">Hickory1</a>
+						</td>
+						<td>
+							2000 Census Tract Data for Hickory, NC MSA and counties</td>
+						<td>
+							68</td>
+						<td>
+							30</td>
+						<td>
+							<a href="data/HickoryMSA.zip" target="_self" title="HickoryMSA.zip"
+								onclick="ga('send', 'event', 'GeoDa-Hickory', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Hickory');">HickoryMSA.zip</a>
+						</td>
+					</tr>
 
-  <tr>
-  <td>
-               <a href="LEHD_Data/" target="_blank">NYC Earnings</a></td>
-       <td>
-           Block-level Earnings in NYC (2002-14)</td>
-       <td>
-           108,487</td>
-       <td>
-           70</td>
-       <td>
-           <a href="data/lehd.zip" target="_self" title="lehd.zip" onclick="ga('send', 'event', 'GeoDa-LEHD', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for LEHD');">lehd.zip</a></td>
-   </tr>
-
-  <tr>
-  <td>
-  <a href="NYC-Census-2000/" target="_blank">NYC Education</a></td>
-  <td>
-  NYC Education (2000)</td>
-  <td>
-  2,216</td>
-  <td>
-  56</td>
-  <td>
-  <a href="data/nyc_2000Census.zip" target="_self" title="nyc_2000Census.zip" onclick="ga('send', 'event', 'GeoDa-NYC2000Census', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NYC2000Census');">nyc_2000Census.zip</a></td>
-		</tr>
-
-    <tr>
-    <td>
-				<a href="NYC-Nhood-ACS-2008-12/" target="_blank">NYC Neighborhoods</a></td>
-                <td>
-                Demographics for New York City neighborhoods</td>
-                <td>
-                195</td>
-                <td>
-                98</td>
-                <td>
-                <a href="data/nycnhood_acs.zip" target="_self"  title="nycnhood_acs.zip" onclick="ga('send', 'event', 'GeoDa-NycnhoodACS', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NycnhoodACS');">nycnhood_acs.zip</a></td>
-                </tr>
+					<tr>
+						<td>
+							<a href="hickory2/" target="_blank">Hickory2
+						</td>
+						<td>
+							1998 and 2001 Zip Code Business Patterns (Census Bureau) for Hickory, NC MSA</td>
+						<td>
+							29</td>
+						<td>
+							55</td>
+						<td>
+							<a href="data/HickoryMSA2.zip" target="_self" title="HickoryMSA2.zip"
+								onclick="ga('send', 'event', 'GeoDa-Hickory2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Hickory2');">HickoryMSA2.zip</a>
+						</td>
+					</tr>
 
 
-  <tr>
-  <td>
-  <a href="NYC_Tract_ACS2008_12/" target="_blank">NYC Socio-Demographics</a></td>
-  <td>
-  NYC Education + Socio-Demographics</td>
-  <td>
-  2,166</td>
-  <td>
-  113</td>
-  <td>
-  <a href="data/nyctract_acs.zip" target="_self" title="nyctract_acs.zip" onclick="ga('send', 'event', 'GeoDa-Nyctract', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Nyctract');">nyctract_acs.zip</a></td>
-		</tr>
+					<tr>
+						<td>
+							<a href="KingCounty-HouseSales2015/" target="_blank">Home Sales</a>
+						</td>
+						<td>
+							2014-15 Home Sales in King County, WA</td>
+						<td>
+							21,613</td>
+						<td>
+							21</td>
+						<td>
+							<a href="data/kingcounty.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-KingCty', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Kingcty');">kingcounty.zip</a>
+						</td>
+					</tr>
 
 
-  <tr>
-      			<td>
-      				<a href="ohiolung/" target="_blank">Ohiolung</a></td>
-      			<td>
-      				Ohio lung cancer data, 1968, 1978, 1988</td>
-      			<td>
-      				88</td>
-      			<td>
-      				42</td>
-      			<td>
-      				<a href="data/ohiolung.zip" target="_self" title="ohiolung.zip" onclick="ga('send', 'event', 'GeoDa-ohiolung', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for ohiolung');">ohiolung.zip</a></td>
-      		</tr>
-      	
-      		<tr>
-      			<td>
-      				<a href="orlando1/" target="_blank">Orlando1</a></td>
-      			<td>
-      				2000 Census Tract Data for Orlando, FL MSA and counties</td>
-      			<td>
-      				328</td>
-      			<td>
-      				30</td>
-      			<td>
-      				<a href="data/OrlandoMSA.zip" target="_self" title="OrlandoMSA.zip" onclick="ga('send', 'event', 'GeoDa-Orlando', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Orlando');">OrlandoMSA.zip</a></td>
-    	</tr>
-      		
-      <tr>
-      			<td>
-      				<a href="orlando2/" target="_blank">Orlando2</a></td>
-      			<td>
-      				1998 and 2001 Zip Code Business Patterns (Census Bureau) for Orlando, FL MSA</td>
-      			<td>
-      				94</td>
-      			<td>
-      				59</td>
-      			<td>
-      				<a href="data/OrlandoMSA2.zip" target="_self" title="OrlandoMSA2.zip" onclick="ga('send', 'event', 'GeoDa-Orlando2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Orlando2');">OrlandoMSA2.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="oz96/" target="_blank">Oz9799</a></td>
-      			<td>
-      				Monthly ozone data, 1997-99</td>
-      			<td>
-      				30</td>
-      			<td>
-      				78</td>
-      			<td>
-      				<a href="data/oz9799.zip" target="_self" title="oz9799.zip" onclick="ga('send', 'event', 'GeoDa-oz9799', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for oz9799');">oz9799.zip</a></td>
-    	</tr>
-      		
-    	<tr>
-      			<td>
-      				<a href="phx/" target="_blank">Phoenix ACS</a></td>
-      			<td>
-      				Phoenix American Community Survey Data (2010, 5-year averages)</td>
-      			<td>
-      				685</td>
-      			<td>
-      				17</td>
-      			<td>
-      				<a href="data/phx2.zip" target="_self" title="phx.zip" onclick="ga('send', 'event', 'GeoDa-Phx', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Phx');">phx.zip</a></td>
-      	</tr>
-      
-      	<tr>
-      			<td>
-      				<a href="pitt93/" target="_blank">Pittsburgh</a></td>
-      			<td>
-      				Pittsburgh homicide locations</td>
-      			<td>
-      				143</td>
-      			<td>
-      				8</td>
-      			<td>
-      				<a href="data/pittsburgh.zip" target="_self" title="pittsburgh.zip" onclick="ga('send', 'event', 'GeoDa-Pitts', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Pitts');">pittsburgh.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="police/" target="_blank">Police</a></td>
-      			<td>
-      				Police expenditures Mississippi counties</td>
-      			<td>
-      				82</td>
-      			<td>
-      				21</td>
-      			<td>
-      				<a href="data/police.zip" target="_self" title="police.zip" onclick="ga('send', 'event', 'GeoDa-police', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for police');">police.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="sacramento1/" target="_blank">Sacramento1</a></td>
-      			<td>
-      				2000 Census Tract Data for Sacramento MSA</td>
-      			<td>
-      				403</td>
-      			<td>
-      				30</td>
-      			<td>
-      				<a href="data/sacramento.zip" target="_self" title="sacramento.zip" onclick="ga('send', 'event', 'GeoDa-Sacramento', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Sacramento');">sacramento.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="sacramento2/" target="_blank">Sacramento2</a></td>
-      			<td>
-      				1998 and 2001 Zip Code Business Patterns (Census Bureau) for Sacramento MSA</td>
-      			<td>
-      				125</td>
-      			<td>
-      				53</td>
-      			<td>
-      				<a href="data/SacramentoMSA2.zip" target="_self" title="SacramentoMSA2.zip" onclick="ga('send', 'event', 'GeoDa-Sacramento2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Sacramento2');">SacramentoMSA2.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="SFcrimes_vars/" target="_blank">SanFran Crime &nbsp &nbsp &nbsp</a></td>
-      			<td>
-      				July-Dec 2012 crime incidents in San Francisco (points + area) - for CAST</td>
-      			<td>
-      				3,384</td>
-      			<td>
-      				13</td>
-      			<td>
-      				<a href="data/SFCrime_July_Dec2012.zip" target="_self" title="SFCrime_July_Dec2012.zip" onclick="ga('send', 'event', 'GeoDa-SFCrime', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for SFCrime');">SFCrime_July_Dec2012.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="savannah1/" target="_blank">Savannah1</a></td>
-      			<td>
-      				2000 Census Tract Data for Savannah, GA MSA and counties</td>
-      			<td>
-      				77</td>
-      			<td>
-      				30</td>
-      			<td>
-      				<a href="data/SavannahMSA.zip" target="_self" title="SavannahMSA.zip" onclick="ga('send', 'event', 'GeoDa-Savannah', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Savannah');">SavannahMSA.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="savannah2/" target="_blank">Savannah2</a></td>
-      			<td>
-      				1998 and 2001 Zip Code Business Patterns (Census Bureau) for Savannah, GA MSA</td>
-      			<td>
-      				24</td>
-      			<td>
-      				55</td>
-      			<td>
-      				<a href="data/SavannahMSA2.zip" target="_self" title="SavannahMSA2.zip" onclick="ga('send', 'event', 'GeoDa-Savannah2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Savannah2');">SavannahMSA2.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="scotlip/" target="_blank">Scotlip</a></td>
-      			<td>
-      				Male lip cancer in Scotland, 1975-80</td>
-      			<td>
-      				56</td>
-      			<td>
-      				11</td>
-      			<td>
-      				<a href="data/scotlip.zip" target="_self" title="scotlip.zip" onclick="ga('send', 'event', 'GeoDa-Scotlip', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Scotlip');">scotlip.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="seattle1/" target="_blank">Seattle1</a></td>
-      			<td>
-      				2000 Census Tract Data for Seattle, WA MSA and counties</td>
-      			<td>
-      				664</td>
-      			<td>
-      				30</td>
-      			<td>
-      				<a href="data/SeattleMSA.zip" target="_self" title="SeattleMSA.zip" onclick="ga('send', 'event', 'GeoDa-Seattle', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Seattle');">SeattleMSA.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="seattle2/" target="_blank">Seattle2</a></td>
-      			<td>
-      				1998 and 2001 Zip Code Business Patterns (Census Bureau) for Seattle, WA MSA</td>
-      			<td>
-      				145</td>
-      			<td>
-      				59</td>
-      			<td>
-      				<a href="data/SeattleMSA2.zip" target="_self" title="SeattleMSA2.zip" onclick="ga('send', 'event', 'GeoDa-Seattle2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Seattle2');">SeattleMSA2.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="sids/" target="_blank">SIDS</a></td>
-      			<td>
-      				North Carolina county SIDS death counts</td>
-      			<td>
-      				100</td>
-      			<td>
-      				13</td>
-      			<td>
-      				<a href="data/sids.zip" target="_self" title="sids.zip" onclick="ga('send', 'event', 'GeoDa-SIDS', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for SIDS');">sids.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="sids2/" target="_blank">SIDS2</a></td>
-      			<td>
-      				North Carolina county SIDS death counts and rates</td>
-      			<td>
-      				100</td>
-      			<td>
-      				17</td>
-      			<td>
-      				<a href="data/sids2.zip" target="_self" title="sids2.zip" onclick="ga('send', 'event', 'GeoDa-SIDS2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for SIDS2');">sids2.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="snow/" target="_blank">Snow</a></td>
-      			<td>
-      				John Snow & the 19th Century Cholera Epidemic</td>
-      			<td>
-      				NA</td>
-      			<td>
-      				NA</td>
-        <td>
-      				<a href="data/snow.zip" target="_self" title="snow.zip" onclick="ga('send', 'event', 'GeoDa-Snow', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Snow');">snow.zip</a></td>
-      		</tr>
-      	
-      	<tr>
-      			<td>
-      				<a href="south/" target="_blank">South</a></td>
-      			<td>
-      				US Southern county homicides 1960-1990</td>
-      			<td>
-      				1,412</td>
-      			<td>
-      				69</td>
-        <td>
-      				<a href="data/south.zip" target="_self" title="south.zip" onclick="ga('send', 'event', 'GeoDa-South', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for South');">south.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="spirals/" target="_blank">Spirals</a></td>
-      			<td>
-      			Synthetic spiral points</td>
-      			<td>
-      				301</td>
-      			<td>
-      				2</td>
-              <td>
-      				<a href="data/spirals.csv" target="_self" onclick="ga('send', 'event', 'GeoDa-Spirals', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Spirals');">spirals.csv</a></td>
-      		</tr>
-   
-      		<tr>
-      			<td>
-      				<a href="stlouis/" target="_blank">StLouis</a></td>
-      			<td>
-      				St Louis region county homicide counts and rates</td>
-      			<td>
-      				78</td>
-      			<td>
-      				23</td>
-            <td>
-      				<a href="data/stlouis.zip" target="_self" title="stlouis.zip" onclick="ga('send', 'event', 'GeoDa-Stlouis', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Stlouis');">stlouis.zip</a></td>
-      		</tr>
-      		
-      		<tr>
-      			<td>
-      				<a href="tampa1/" target="_blank">Tampa1</a></td>
-      			<td>
-      				2000 Census Tract Data for Tampa, FL MSA and counties</td>
-      			<td>
-      				547</td>
-      			<td>
-      				30</td>
-      			<td>
-      				<a href="data/TampaMSA.zip" target="_self" title="TampaMSA.zip" onclick="ga('send', 'event', 'GeoDa-Tampa', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Tampa');">TampaMSA.zip</a></td>
-      		</tr>
-      		
-	  	<tr>
-      			<td>
-      				<a href="us-sdoh/" target="_blank">US SDOH</a></td>
-      			<td>
-      				2014 US Social Determinants of Health Data</td>
-      			<td>
-      				71,901</td>
-      			<td>
-      				25</td>
-      			<td>
-      				<a href="data/us-sdoh-2014.zip" target="_self" title="us-sdoh-2014.zip" onclick="ga('send', 'event', 'GeoDa-USSDOH', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for US SDOH');">us-sdoh-2014.zip</a></td>
-      		</tr>
-      	</tbody>
-      </table>
-    </div>
-  </article>
 
-  <div id="grid" class="row flex-grid">
-  </div>
+					<tr>
+						<td>
+							<a href="houston/" target="_blank">Houston</a>
+						</td>
+						<td>
+							Houston, TX region homicide counts and rates</td>
+						<td>
+							52</td>
+						<td>
+							23</td>
+						<td>
+							<a href="data/houston_hom.zip" target="_self" title="houston_hom.zip"
+								onclick="ga('send', 'event', 'GeoDa-Houston', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Houston');">houston_hom.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="juvenile/" target="_blank">Juvenile</a>
+						</td>
+						<td>
+							Cardiff juvenile delinquent residences</td>
+						<td>
+							168</td>
+						<td>
+							3</td>
+						<td>
+							<a href="data/juvenile.zip" target="_self" title="juvenile.zip"
+								onclick="ga('send', 'event', 'GeoDa-Juvenile', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Juvenile');">juvenile.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="lansing1/" target="_blank">Lansing1</a>
+						</td>
+						<td>
+							2000 Census Tract Data for Lansing, MI MSA and counties</td>
+						<td>
+							117</td>
+						<td>
+							30</td>
+						<td>
+							<a href="data/LansingMSA.zip" target="_self" title="LansingMSA.zip"
+								onclick="ga('send', 'event', 'GeoDa-Lansing', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Lansing');">LansingMSA.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="lansing2/" target="_blank">Lansing2</a>
+						</td>
+						<td>
+							1998 and 2001 Zip Code Business Patterns (Census Bureau) for Lansing, MI MSA</td>
+						<td>
+							46</td>
+						<td>
+							55</td>
+						<td>
+							<a href="data/LansingMSA2.zip" target="_self" title="LansingMSA2.zip"
+								onclick="ga('send', 'event', 'GeoDa-Lansing2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Lansing2');">LansingMSA2.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="ozone/" target="_blank">Laozone</a>
+						</td>
+						<td>
+							Ozone measures at monitoring stations in Los Angeles basin</td>
+						<td>
+							32</td>
+						<td>
+							8</td>
+						<td>
+							<a href="data/laozone.zip" target="_self" title="laozone.zip"
+								onclick="ga('send', 'event', 'GeoDa-Laozone', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Laozone');">laozone.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="lasrosas/" target="_blank">LasRosas</a>
+						</td>
+						<td>
+							Corn yield, fertilizer and field data for precision agriculture, Argentina, 1999</td>
+						<td>
+							1,738</td>
+						<td>
+							34</td>
+						<td>
+							<a href="data/lasrosas.zip" target="_self" title="lasrosas.zip"
+								onclick="ga('send', 'event', 'GeoDa-Lasrosas', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Lasrosas');">lasrosas.zip</a>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td>
+							<a href="liq_chicago/" target="_blank">Liquor Stores</a>
+						</td>
+						<td>
+							2015 Chicago Liquor Stores</td>
+						<td>
+							571</td>
+						<td>
+							2</td>
+						<td>
+							<a href="data/liquor.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-Liquor', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Liquor');">liquor.zip</a>
+						</td>
+					</tr>
+
+
+
+					<tr>
+						<td>
+							<a href="colomb_malaria/" target="_blank">Malaria</a>
+						</td>
+						<td>
+							Malaria incidence and population (1973, 95, 93 censuses and projections until 2005) &nbsp &nbsp &nbsp</td>
+						<td>
+							1,068</td>
+						<td>
+							50</td>
+						<td>
+							<a href="data/malariacolomb.zip" target="_self" title="Malaria Columbia"
+								onclick="ga('send', 'event', 'GeoDa-Malaria', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for BMalaria');">Malaria-Colombia.zip</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="milwaukee1/" target="_blank">Milwaukee1</a>
+						</td>
+						<td>
+							2000 Census Tract Data for Milwaukee, WI MSA</td>
+						<td>
+							417</td>
+						<td>
+							31</td>
+						<td>
+							<a href="data/MilwaukeeMSA.zip" target="_self" title="MilwaukeeMSA.zip"
+								onclick="ga('send', 'event', 'GeoDa-Milwaukee', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Milwaukee');">MilwaukeeMSA.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="milwaukee2/" target="_blank">Milwaukee2</a>
+						</td>
+						<td>
+							1998 and 2001 Zip Code Business Patterns (Census Bureau) for Milwaukee, WI MSA</td>
+						<td>
+							83</td>
+						<td>
+							55</td>
+						<td>
+							<a href="data/MilwaukeeMSA2.zip" target="_self" title="MilwaukeeMSA2.zip"
+								onclick="ga('send', 'event', 'GeoDa-Milwaukee2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Milwaukee2');">MilwaukeeMSA2.zip</a>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td>
+							<a href="ncovr/" target="_blank">NCOVR</a>
+						</td>
+						<td>
+							US county homicides 1960-1990</td>
+						<td>3,085</td>
+						<td>
+							69</td>
+						<td>
+							<a href="data/ncovr.zip" target="_self" title="ncovr.zip"
+								onclick="ga('send', 'event', 'GeoDa-NCOVR', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NCOVR');">ncovr.zip</a>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td>
+							<a href="natregimes/" target="_blank">Natregimes</a>
+						</td>
+						<td>
+							NCOVR with regimes (book/PySAL)</td>
+						<td>
+							3,085</td>
+						<td>
+							73</td>
+						<td>
+							<a href="data/natregimes.zip" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-NatRegimes', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NatRegimes');">natregimes.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="ndvi/" target="_blank">NDVI</a>
+						</td>
+						<td>
+							Normalized Difference Vegetation Index grid</td>
+						<td>
+							49</td>
+						<td>
+							5</td>
+						<td>
+							<a href="data/ndvi.zip" target="_self" title="ndvi.zip"
+								onclick="ga('send', 'event', 'GeoDa-NDVI', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NDVI');">ndvi.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="nepal/" target="_blank">Nepal</a>
+						</td>
+						<td>
+							Health, poverty and education indicators for Nepal districts</td>
+						<td>
+							75</td>
+						<td>
+							61</td>
+						<td>
+							<a href="data/nepal.zip" target="_self" title="nepal.zip"
+								onclick="ga('send', 'event', 'GeoDa-Nepal', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Nepal');">nepal.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="nyc/" target="_blank">NYC</a>
+						</td>
+						<td>
+							Demographic and housing data for New York City subboroughs, 2002-09</td>
+						<td>
+							55</td>
+						<td>
+							34</td>
+						<td>
+							<a href="/data/nyc.zip" target="_self" title="nyc.zip"
+								onclick="ga('send', 'event', 'GeoDa-NYC', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NYC');">nyc.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="LEHD_Data/" target="_blank">NYC Earnings</a>
+						</td>
+						<td>
+							Block-level Earnings in NYC (2002-14)</td>
+						<td>
+							108,487</td>
+						<td>
+							70</td>
+						<td>
+							<a href="data/lehd.zip" target="_self" title="lehd.zip"
+								onclick="ga('send', 'event', 'GeoDa-LEHD', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for LEHD');">lehd.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="NYC-Census-2000/" target="_blank">NYC Education</a>
+						</td>
+						<td>
+							NYC Education (2000)</td>
+						<td>
+							2,216</td>
+						<td>
+							56</td>
+						<td>
+							<a href="data/nyc_2000Census.zip" target="_self" title="nyc_2000Census.zip"
+								onclick="ga('send', 'event', 'GeoDa-NYC2000Census', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NYC2000Census');">nyc_2000Census.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="NYC-Nhood-ACS-2008-12/" target="_blank">NYC Neighborhoods</a>
+						</td>
+						<td>
+							Demographics for New York City neighborhoods</td>
+						<td>
+							195</td>
+						<td>
+							98</td>
+						<td>
+							<a href="data/nycnhood_acs.zip" target="_self" title="nycnhood_acs.zip"
+								onclick="ga('send', 'event', 'GeoDa-NycnhoodACS', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for NycnhoodACS');">nycnhood_acs.zip</a>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td>
+							<a href="NYC_Tract_ACS2008_12/" target="_blank">NYC Socio-Demographics</a>
+						</td>
+						<td>
+							NYC Education + Socio-Demographics</td>
+						<td>
+							2,166</td>
+						<td>
+							113</td>
+						<td>
+							<a href="data/nyctract_acs.zip" target="_self" title="nyctract_acs.zip"
+								onclick="ga('send', 'event', 'GeoDa-Nyctract', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Nyctract');">nyctract_acs.zip</a>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td>
+							<a href="ohiolung/" target="_blank">Ohiolung</a>
+						</td>
+						<td>
+							Ohio lung cancer data, 1968, 1978, 1988</td>
+						<td>
+							88</td>
+						<td>
+							42</td>
+						<td>
+							<a href="data/ohiolung.zip" target="_self" title="ohiolung.zip"
+								onclick="ga('send', 'event', 'GeoDa-ohiolung', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for ohiolung');">ohiolung.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="orlando1/" target="_blank">Orlando1</a>
+						</td>
+						<td>
+							2000 Census Tract Data for Orlando, FL MSA and counties</td>
+						<td>
+							328</td>
+						<td>
+							30</td>
+						<td>
+							<a href="data/OrlandoMSA.zip" target="_self" title="OrlandoMSA.zip"
+								onclick="ga('send', 'event', 'GeoDa-Orlando', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Orlando');">OrlandoMSA.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="orlando2/" target="_blank">Orlando2</a>
+						</td>
+						<td>
+							1998 and 2001 Zip Code Business Patterns (Census Bureau) for Orlando, FL MSA</td>
+						<td>
+							94</td>
+						<td>
+							59</td>
+						<td>
+							<a href="data/OrlandoMSA2.zip" target="_self" title="OrlandoMSA2.zip"
+								onclick="ga('send', 'event', 'GeoDa-Orlando2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Orlando2');">OrlandoMSA2.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="oz96/" target="_blank">Oz9799</a>
+						</td>
+						<td>
+							Monthly ozone data, 1997-99</td>
+						<td>
+							30</td>
+						<td>
+							78</td>
+						<td>
+							<a href="data/oz9799.zip" target="_self" title="oz9799.zip"
+								onclick="ga('send', 'event', 'GeoDa-oz9799', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for oz9799');">oz9799.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="phx/" target="_blank">Phoenix ACS</a>
+						</td>
+						<td>
+							Phoenix American Community Survey Data (2010, 5-year averages)</td>
+						<td>
+							685</td>
+						<td>
+							17</td>
+						<td>
+							<a href="data/phx2.zip" target="_self" title="phx.zip"
+								onclick="ga('send', 'event', 'GeoDa-Phx', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Phx');">phx.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="pitt93/" target="_blank">Pittsburgh</a>
+						</td>
+						<td>
+							Pittsburgh homicide locations</td>
+						<td>
+							143</td>
+						<td>
+							8</td>
+						<td>
+							<a href="data/pittsburgh.zip" target="_self" title="pittsburgh.zip"
+								onclick="ga('send', 'event', 'GeoDa-Pitts', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Pitts');">pittsburgh.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="police/" target="_blank">Police</a>
+						</td>
+						<td>
+							Police expenditures Mississippi counties</td>
+						<td>
+							82</td>
+						<td>
+							21</td>
+						<td>
+							<a href="data/police.zip" target="_self" title="police.zip"
+								onclick="ga('send', 'event', 'GeoDa-police', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for police');">police.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="sacramento1/" target="_blank">Sacramento1</a>
+						</td>
+						<td>
+							2000 Census Tract Data for Sacramento MSA</td>
+						<td>
+							403</td>
+						<td>
+							30</td>
+						<td>
+							<a href="data/sacramento.zip" target="_self" title="sacramento.zip"
+								onclick="ga('send', 'event', 'GeoDa-Sacramento', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Sacramento');">sacramento.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="sacramento2/" target="_blank">Sacramento2</a>
+						</td>
+						<td>
+							1998 and 2001 Zip Code Business Patterns (Census Bureau) for Sacramento MSA</td>
+						<td>
+							125</td>
+						<td>
+							53</td>
+						<td>
+							<a href="data/SacramentoMSA2.zip" target="_self" title="SacramentoMSA2.zip"
+								onclick="ga('send', 'event', 'GeoDa-Sacramento2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Sacramento2');">SacramentoMSA2.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="SFcrimes_vars/" target="_blank">SanFran Crime &nbsp &nbsp &nbsp</a>
+						</td>
+						<td>
+							July-Dec 2012 crime incidents in San Francisco (points + area) - for CAST</td>
+						<td>
+							3,384</td>
+						<td>
+							13</td>
+						<td>
+							<a href="data/SFCrime_July_Dec2012.zip" target="_self" title="SFCrime_July_Dec2012.zip"
+								onclick="ga('send', 'event', 'GeoDa-SFCrime', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for SFCrime');">SFCrime_July_Dec2012.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="savannah1/" target="_blank">Savannah1</a>
+						</td>
+						<td>
+							2000 Census Tract Data for Savannah, GA MSA and counties</td>
+						<td>
+							77</td>
+						<td>
+							30</td>
+						<td>
+							<a href="data/SavannahMSA.zip" target="_self" title="SavannahMSA.zip"
+								onclick="ga('send', 'event', 'GeoDa-Savannah', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Savannah');">SavannahMSA.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="savannah2/" target="_blank">Savannah2</a>
+						</td>
+						<td>
+							1998 and 2001 Zip Code Business Patterns (Census Bureau) for Savannah, GA MSA</td>
+						<td>
+							24</td>
+						<td>
+							55</td>
+						<td>
+							<a href="data/SavannahMSA2.zip" target="_self" title="SavannahMSA2.zip"
+								onclick="ga('send', 'event', 'GeoDa-Savannah2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Savannah2');">SavannahMSA2.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="scotlip/" target="_blank">Scotlip</a>
+						</td>
+						<td>
+							Male lip cancer in Scotland, 1975-80</td>
+						<td>
+							56</td>
+						<td>
+							11</td>
+						<td>
+							<a href="data/scotlip.zip" target="_self" title="scotlip.zip"
+								onclick="ga('send', 'event', 'GeoDa-Scotlip', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Scotlip');">scotlip.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="seattle1/" target="_blank">Seattle1</a>
+						</td>
+						<td>
+							2000 Census Tract Data for Seattle, WA MSA and counties</td>
+						<td>
+							664</td>
+						<td>
+							30</td>
+						<td>
+							<a href="data/SeattleMSA.zip" target="_self" title="SeattleMSA.zip"
+								onclick="ga('send', 'event', 'GeoDa-Seattle', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Seattle');">SeattleMSA.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="seattle2/" target="_blank">Seattle2</a>
+						</td>
+						<td>
+							1998 and 2001 Zip Code Business Patterns (Census Bureau) for Seattle, WA MSA</td>
+						<td>
+							145</td>
+						<td>
+							59</td>
+						<td>
+							<a href="data/SeattleMSA2.zip" target="_self" title="SeattleMSA2.zip"
+								onclick="ga('send', 'event', 'GeoDa-Seattle2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Seattle2');">SeattleMSA2.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="sids/" target="_blank">SIDS</a>
+						</td>
+						<td>
+							North Carolina county SIDS death counts</td>
+						<td>
+							100</td>
+						<td>
+							13</td>
+						<td>
+							<a href="data/sids.zip" target="_self" title="sids.zip"
+								onclick="ga('send', 'event', 'GeoDa-SIDS', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for SIDS');">sids.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="sids2/" target="_blank">SIDS2</a>
+						</td>
+						<td>
+							North Carolina county SIDS death counts and rates</td>
+						<td>
+							100</td>
+						<td>
+							17</td>
+						<td>
+							<a href="data/sids2.zip" target="_self" title="sids2.zip"
+								onclick="ga('send', 'event', 'GeoDa-SIDS2', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for SIDS2');">sids2.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="snow/" target="_blank">Snow</a>
+						</td>
+						<td>
+							John Snow & the 19th Century Cholera Epidemic</td>
+						<td>
+							NA</td>
+						<td>
+							NA</td>
+						<td>
+							<a href="data/snow.zip" target="_self" title="snow.zip"
+								onclick="ga('send', 'event', 'GeoDa-Snow', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Snow');">snow.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="south/" target="_blank">South</a>
+						</td>
+						<td>
+							US Southern county homicides 1960-1990</td>
+						<td>
+							1,412</td>
+						<td>
+							69</td>
+						<td>
+							<a href="data/south.zip" target="_self" title="south.zip"
+								onclick="ga('send', 'event', 'GeoDa-South', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for South');">south.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="spirals/" target="_blank">Spirals</a>
+						</td>
+						<td>
+							Synthetic spiral points</td>
+						<td>
+							301</td>
+						<td>
+							2</td>
+						<td>
+							<a href="data/spirals.csv" target="_self"
+								onclick="ga('send', 'event', 'GeoDa-Spirals', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Spirals');">spirals.csv</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="stlouis/" target="_blank">StLouis</a>
+						</td>
+						<td>
+							St Louis region county homicide counts and rates</td>
+						<td>
+							78</td>
+						<td>
+							23</td>
+						<td>
+							<a href="data/stlouis.zip" target="_self" title="stlouis.zip"
+								onclick="ga('send', 'event', 'GeoDa-Stlouis', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Stlouis');">stlouis.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="tampa1/" target="_blank">Tampa1</a>
+						</td>
+						<td>
+							2000 Census Tract Data for Tampa, FL MSA and counties</td>
+						<td>
+							547</td>
+						<td>
+							30</td>
+						<td>
+							<a href="data/TampaMSA.zip" target="_self" title="TampaMSA.zip"
+								onclick="ga('send', 'event', 'GeoDa-Tampa', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for Tampa');">TampaMSA.zip</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<a href="us-sdoh/" target="_blank">US SDOH</a>
+						</td>
+						<td>
+							2014 US Social Determinants of Health Data</td>
+						<td>
+							71,901</td>
+						<td>
+							25</td>
+						<td>
+							<a href="data/us-sdoh-2014.zip" target="_self" title="us-sdoh-2014.zip"
+								onclick="ga('send', 'event', 'GeoDa-USSDOH', 'GeoDaSampleDownload', 'GeoDa Sample Data downloads Count for US SDOH');">us-sdoh-2014.zip</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</article>
+
+	<div id="grid" class="row flex-grid">
+	</div>
 </main>
