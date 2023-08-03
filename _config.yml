@@ -39,10 +39,8 @@ links:
   #  url: /about
 
 # exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+exclude: ['package.json', 'src', 'node_modules', 'reactgeoda']
 
-includes:
-- data
-- tag
+include: ['data', 'tag', '_next', '_error-*.js', '_buildManifest.js', '_ssgManifest.js', '_app-*.js']
 
 encoding: UTF-8

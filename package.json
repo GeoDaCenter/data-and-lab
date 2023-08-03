@@ -4,7 +4,8 @@
   "description": "A simple template for Jekyll Blogs.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build-webglmap": "cd reactgeoda && yarn && export BASE_PATH=/data-and-lab && yarn build && rm -rf ../_next && cp -rf out/_next ../"
   },
   "keywords": [
     "frontend",
@@ -33,7 +34,7 @@
     "rupture": "^0.6.1"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/GeoDaCenter/data-and-lab.git"
+    "type": "git",
+    "url": "https://github.com/GeoDaCenter/data-and-lab.git"
   }
 }
