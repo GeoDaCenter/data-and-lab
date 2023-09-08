@@ -4,6 +4,7 @@ _site
 
 *.swp
 
+.pnp.cjs
 node_modules/
 .Rproj.user/
 .vscode/
