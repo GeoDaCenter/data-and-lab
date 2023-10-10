@@ -18,61 +18,12 @@ categories:
 twitter_text:
 introduction: "Crime and socio-demographics data for the Clifton, Walnut Hills, Evanston, and Avondale neighborhoods in Cincinnati, OH for 08-12/2008."
 ---
-<script>
-  var map = L.map('map');
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', { <!--this is the URL for the walnut_hills Geojson-->
-		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-		id: 'mapbox.light'
-	}).addTo(map);
+<div id="root" data-geojson="../data/walnut_hills.geojson"></div>
 
-  map.scrollWheelZoom.disable();
-  map.touchZoom.disable();
-  var enableMapInteraction = function () {
-      map.scrollWheelZoom.enable();
-      map.touchZoom.enable();
-  }
-  $('#map').on('click touch', enableMapInteraction);
-$('#map').on('mouseout', function(){ map.scrollWheelZoom.disable();});
-
-  var smallIcon = L.icon({
-         iconUrl: 'http://www.hckrecruitment.nic.in/images/blue.png',
-         iconSize: [16, 16], // size of the icon
-         });
-
-   function onEachFeature(feature, layer) {
-     //console.log(feature);
-     var txt = "";
-     for (var fname in feature.properties) {
-       txt += fname;
-       txt += " : ";
-       txt += feature.properties[fname];
-       txt += "<br/>";
-     }
-     layer.bindPopup(txt);
-   }
+<br>
 
 
-  // load GeoJSON from an external file
-  // load GeoJSON from an external file
-  $.getJSON("../data/walnut_hills.geojson",function(data){
-    // add GeoJSON layer to the map once the file is loaded
-    var json = L.geoJson(data, {
-      pointToLayer: function(feature, latlng) {
-        
-        return L.marker(latlng, {
-          icon: smallIcon
-        });
-      },
-      onEachFeature: onEachFeature
-    });
-    json.addTo(map);
-    map.fitBounds(json.getBounds());
-  });
 
-</script>
 
 [DOWNLOAD DATA](../data/walnuthills_updated.zip)
 

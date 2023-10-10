@@ -16,10 +16,6 @@ categories:
 twitter_text:
 introduction: '1999 Elections for Argentinean Congress'
 ---
-<script>
-$('#map').hide();
-</script>
-
 [DOWNLOAD DATA](../data/buenosaires.zip)
 
 

@@ -4,7 +4,8 @@
   "description": "A simple template for Jekyll Blogs.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build:reactgeoda": "git submodule update --init --recursive && cd reactgeoda && yarn && cd library && yarn && yarn build && cp out/*.js ../../assets/js"
   },
   "keywords": [
     "frontend",
@@ -37,6 +38,7 @@
     "url": "https://github.com/GeoDaCenter/data-and-lab.git"
   },
   "volta": {
-    "node": "12.22.12"
+    "node": "16.20.2",
+    "yarn": "3.0.2"
   }
 }
