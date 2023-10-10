@@ -18,10 +18,6 @@ categories:
 twitter_text:
 introduction: '2011 abandoned vehicles in Chicago (311 complaints).'
 ---
-<script>
-$('#map').hide();
-</script>
-
 [DOWNLOAD DATA](../data/Abandoned_Vehicles_Map.csv)
 
 Information about abandoned vehicles in Chicago, Illinois. Includes all open abandoned vehicle service complaints made to 311 since January 2011, and all requests completed since January 1 2011.

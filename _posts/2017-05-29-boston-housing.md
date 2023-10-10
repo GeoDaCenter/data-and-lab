@@ -17,9 +17,6 @@ categories:
 twitter_text:
 introduction: 'Boston data for hedonic house price modeling (1970s).'
 ---
-<script>
-$('#map').hide();
-</script>
 
 [DOWNLOAD DATA](../data/boston.zip)
 

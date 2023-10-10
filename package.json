@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "test",
-    "build:reactgeoda": "cd reactgeoda/library && yarn build && cp out/* ../../assets/js"
+    "build:reactgeoda": "git submodule update --init --recursive && cd reactgeoda && yarn && cd library && yarn && yarn build && cp out/*.js ../../assets/js"
   },
   "keywords": [
     "frontend",
