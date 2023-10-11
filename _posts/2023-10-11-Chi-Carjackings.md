@@ -17,19 +17,19 @@ categories:
 twitter_text:
 introduction: 'Point locations of carjackings in 2020 Chicago'
 ---
-<div id="root" data-geojson="../data/Chi-Carjackings.geojson"></div>
+<div id="root" data-geojson="../data/Chi_Carjackings.geojson"></div>
 
 <br>
 
-[DOWNLOAD DATA](../data/Chi-Carjackings.zip)
+[DOWNLOAD DATA](../data/Chi_Carjackings.zip)
 
 Point locations of carjackings in 2020 in Chicago, IL.
  
 Source: Chicago Open Data Portal 
  
 - Observations = 1412
-- Variables = 
-- Years = 2014
+- Variables = 15
+- Years = 2020
 
 **Overview of data**
 
