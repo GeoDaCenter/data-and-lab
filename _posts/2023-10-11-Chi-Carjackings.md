@@ -4,10 +4,9 @@ title: 'Chicago Carjackings'
 date: 2023-10-11 12:29:00
 image: /assets/img/
 description:
-main-class: 'development'
+main-class: 'textbook'
 color:
 tags:
-  - development
   - points
   - <500
   - textbook

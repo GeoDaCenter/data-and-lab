@@ -4,7 +4,7 @@ title: 'Italy Community Banks'
 date: 2023-10-11 11:46:00
 image: /assets/img/
 description:
-main-class: 'development'
+main-class: 'textbook'
 color:
 tags:
   - development

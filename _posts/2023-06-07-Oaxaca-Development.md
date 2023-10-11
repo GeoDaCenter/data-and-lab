@@ -4,7 +4,7 @@ title: 'Oaxaca Development'
 date: 2023-06-07 11:32:16
 image: /assets/img/
 description:
-main-class: 'development'
+main-class: 'textbook'
 color:
 tags:
   - development
