@@ -8,7 +8,7 @@ main-class: 'textbook'
 color:
 tags:
   - development
-  - polygons
+  - points 
   - <500
   - textbook
   - ESDA
@@ -34,6 +34,7 @@ Italy_banks.shp – 261 points in UTM zone 32, no Sardinia or Elba
 - Years = 2011-2017
 
 **Overview of data**
+
 |**Variable**|**Description**|
 |---|---|
 |Idd|bank ID|
