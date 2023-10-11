@@ -1,0 +1,288 @@
+---
+layout: post
+title: 'Oaxaca Development'
+date: 2023-06-07 11:32:16
+image: /assets/img/
+description:
+main-class: 'development'
+color:
+tags:
+  - development
+  - polygons
+  - <500
+  - textbook
+  - ESDA
+  - open data
+categories:
+twitter_text:
+introduction: 'Poverty and food insecurity indicators and census variables for 2010 and 2020 in the State of Oaxaca, Mexico'
+---
+<div id="root" data-geojson="../data/Oaxaca.geojson"></div>
+
+<br>
+
+[DOWNLOAD DATA](../data/Oaxaca.zip)
+
+Municipalities in the State of Oaxaca, Mexico. Poverty and food insecurity indicators and census variables for 2010 and 2020 (CONEVAL and INEGI) (based on the same original sources as Farah Rivadeneyra 2017)
+
+- Observations = 570
+- Variables = 413
+- Years = 2000, 2010, 2020
+
+The Mexico poverty codebook is included in the downloaded zip file.
+
+Oaxaca Census Variables Master Data Dictionary – 2000, 2010, 2020
+
+- is computed
+
+• MUN: municipality code, 1 to 570
+• NOM_MUN: municipality name > NOM
+• ALT: altitude, average of altitudes of localities in munipality for 2020
+
+Population totals
+
+• POBTOT: total population > PTOTxx
+• POBFEM, PFEMENI: female population > PFEMxx
+• POBMAS, PMASCUL: male population > PMASxx
+• RELxx \* > sex ratio male/female
+
+Population category totals
+• P5Uxx: ages five and up
+• P12Uxx: ages twelve and up
+• P15Uxx: ages fifteen and up
+• P18Uxx: ages eighteen and up
+• PM18Uxx: male ages eighteen and up
+• PF18Uxx: female ages eighteen and up
+• P6T14xx: population 6-14 (6-11 + 12-14 for > 00)
+• P15T17xx: population 15-17
+• P15T24xx: population 15-24 (15-17 + 18-24 for > 00)
+• F15T49xx: female population 15 to 49
+
+Demographic characteristics
+
+• NACIxx: total people that were born inside muni
+• NACOxx: total people that were born outside muni (Note: sum of these does not equal population)
+• P5RESxx: resident (5yr+) of muni five years ago (resp 1995, 2005 and 2015)
+• P5NRESxx: not resident (5yr+) of muni five years ago (Note: sum of these does not equal population over 5, but close)
+• PINDxx: people > 5yr speaking indigenous language
+• PINDNSxx: people > 5yr speaking indigenous language no Spanish
+• PINDSxx: people > 5yr spatial indigenous language and Spanish
+• DISxx: disabled population (PCON_DISC 2020 and 2000 only)
+• P15ANxx: population 15+ no read or write
+• P614NSxx: population 6 to 14 not attending school
+• P15NSxx: 15+ population without any schooling
+• P15PRIxx: 15+ population with completed primary education
+• P15SCxx: 15+ population with completed secondary education
+• P18HIxx: 18+ population with higher education
+• GRADxx: average number of grades completed
+• PEAxx: population > 12 economically active
+• PIEAxx: population > 12 not economically active
+• PJOBxx: population > 12 with a job
+• PNOHxx: population without access to health services
+• PHAxx: population with access to health services
+• PSINxx: population > 12 single
+• PMARxx: population > 12 married
+• PCATxx: catholic population > 5
+• PROTHxx: other religion, non-catholic in 2000, not cath or prot in others (> 5)
+• PNRELxx: no religion > 5
+• HHxx: total number of households
+• HHFxx: female headed households
+• HHMxx: male headed households
+• PHHxx: people in households
+• PHHFxx: people in female headed households
+• PHHMxx: people in male headed households
+
+Housing
+
+• HOMSxx: total inhabited private homes (vivparhab)
+• OCCxx: occupants of inhabited private homes (occupvivpar)
+• AVHMxx: average number of occupants in inhabited private homes
+• AVRMxx: average number of occupants per room in inhabited private homes
+• NODIRxx: private inhabited dwellings with floor other than dirt (vph_pisodt, vp_pisdes)
+• ONRMxx: private inhabited dwellings with one bedroom only (vph_1dor, vp_ccuart)
+• ELECxx: private inhabited dwellings with electricity (vph_c_elec, vp_elec)
+• WATxx: private inhabited dwellings with piped water (vph_aguadv, vp_aguent)
+• DRAINxx: private inhabited dwellings that have drainage (vph_drenaj, vp_drenaj)
+• REFRxx: private inhabited dwellings with a refrigerator (vph_refri, vp_refri)
+• WASHxx: private inhabited dwellings with a washing machine (vph_lavad)
+• CARxx: private inhabited dwellings with a car or van (vph_autom)
+• RADxx: private inhabited dwellings with a radio
+• TVxx: private inhabited dwellings with a tv
+• TELxx: private inhabited dwellings with a land line
+
+2010 and 2020 only
+• P60Uxx: population over 60
+• PM60Uxx: male population over 60
+• PF60Uxx: female population over 60
+• P65Uxx: population over 65
+• CBRxx: crude birth rate (PROM_HNV)
+• PHOGxx: people in indigenous households (PHOG_IND)
+• LIMxx: population with limitations (mobility etc.)
+• PSEPxx: population > 12 divorced etc.
+• PNCATxx: non-catholic (2010), evangelical Christian (2020)
+• CELxx: private inhabited dwellings that have cell service
+• INTERxx: private inhabited dwellings with internet service
+• PCxx: private inhabited dwellings with a PC
+• CATMAXxx: largest category of locality setting (max tamloc)
+• CATMINxx: smallest category of locality setting (min tamloc)
+o tam_loc,descripcion
+o 1,1 a 249 habitantes
+o 2,250 a 499 habitantes
+o 3,500 a 999 habitantes
+o 4,1 000 a 2 499 habitantes
+o 5,2 500 a 4 999 habitantes
+o 6,5 000 a 9 999 habitantes
+o 7,10 000 a 14 999 habitantes
+o 8,15 000 a 29 999 habitantes
+o 9,30 000 a 49 999 habitantes
+o 10,50 000 a 99 999 habitantes
+o 11,100 000 a 249 999 habitantes
+o 12,250 000 a 499 999 habitantes
+o 13,500 000 a 999 999 habitantes
+o 14,1 000 000 y más habitants
+
+2020 only
+• AFROxx: population of African descent
+
+Proportions in percent (p_varname) \*
+
+• Population age distribution
+o p_P5Uxx = P5Uxx / PTOTxx
+o p_P12Uxx = P12Uxx / PTOTxx
+o p_P15Uxx = P15Uxx / PTOTxx
+o p_P18Uxx = P18Uxx / PTOTxx
+o p_PM18Uxx = PM18Uxx / PTOTxx
+o p_PF18Uxx = PF18Uxx / PTOTxx
+o p_P6T14xx = P6T14xx / PTOTxx
+o p_P15T17xx = P15T17xx / PTOTxx
+o p_P15T24xx = P15T24xx / PTOTxx
+o p_F15T49xx = F15T49xx / PFEMxx
+
+• Born in/not in muni
+o T1 = NACIxx + NACOxx
+o p_NACIxx = NACIxx / T1
+o p_NACOxx = NACOxx / T1
+• five years ago (mobility)
+o p_P5RESxx = P5RESxx / P5Uxx
+o p_P5NRESxx = P5NRESxx / P5Uxx
+• language spoken
+o p_PINDxx = PINDxx / P5Uxx
+o p_PINDNSxx = PINDNSxx / P5Uxx
+o p_PINDSxx = PINDSxx / P5Uxx
+• disabled (2020 only)
+o p_DISxx = DISxx / PTOTxx
+• schooling
+o p_P15ANxx = P15ANxx / P15Uxx
+o p_P614NSxx = P614NSxx / P6T14xx
+o p_P15NSxx = P15NSxx / P15Uxx
+o p_P15PRIxx = P15PRIxx / P15Uxx
+o p_P15SCxx = P15SCxx / P15Uxx
+o p_P18HIxx = P18HIxx / P18Uxx
+• labor market
+o p_PEAxx = PEAxx / P12Uxx
+o p_PIEAxx = PIEAxx / P12Uxx
+o p_PJOBxx = PJOBxx / P12Uxx
+• health
+o p_PHAxx = PHAxx / PTOTxx
+o p_NOHxx = PNOHxx / PTOTxx
+• marital
+o p_PSINxx = PSINxx / P12Uxx
+o p_PMARxx = PMARxx / P12Uxx
+• religion
+o p_PCATxx = PCATxx / PTOTxx
+o p_PROTHxx = PROTHxx / PTOTxx
+o p_PNRELxx = PNRELxx / PTOTxx
+• households
+o p_HHFxx = HHFxx / HHxx
+o p_HHMxx = HHMxx / HHxx
+o p_PHHFxx = PHHFxx / PHHxx
+o p_PHHMxx = PHHMxx / PHHxx
+• housing
+o p_OCCxx = OCCxx / PTOTxx
+o p_NODIRxx = NODIRxx / HOMSxx
+o p_ONRMxx = ONRMxx / HOMSxx
+o p_ELECxx = ELEXxx / HOMSxx
+o p_WATxx = WATxx / HOMSxx
+o p_DRAINxx = DRAINxx / HOMSxx
+o p_REFRxx = REFRxx / HOMSxx
+o p_WASHxx = WASHxx / HOMSxx
+o p_CARxx = CARxx / HOMSxx
+o p_RADxx = RADxx / HOMSxx
+o p_TVxx = TVxx / HOMSxx
+o p_TELxx = TELxx / HOMSxx
+
+Selected years
+
+2020 and 2010
+
+• demographics
+o p_P60Uxx = P60Uxx / PTOTxx
+o p_PM60Uxx = PM60Uxx / PTOTxx
+o p_PF60Uxx = PF60Uxx / PTOTxx
+o p_P65Uxx = P65Uxx / PTOTxx
+o p_PHOGxx = PHOGxx / PTOTxx
+o p_LIMxx = LIMxx / PTOTxx
+o p_PSEPxx = PSEPxx / P12Uxx
+o p_PNCATxx = PNCATxx / PTOTxx
+o p_CELxx = CELxx / HOMSxx
+o p_INTERxx = INTERxx / HOMSxx
+o p_PCxx = PCxx / HOMSxx
+
+2020 only
+
+• p_AFROxx = AFROxx / PTOTxx
+
+Year to year change for percentages \*
+
+Applied to all the p\_ variables
+
+• c_XX01 = 2010 – 2000
+• c_XX12 = 2020 – 2010
+
+Percentage change in totals (denominators used in p\_ calculations)
+
+• c_PTOT01 = (PTOT10 – PTOT00)/PTOT00
+o c_PTOT12 = (PTOT20 – PTOT10)/PTOT10
+• c_P6T1401 = (P6T1410 – P6T1400)/P6T1400
+• c_P15T1701 = (P15T1710 – P15T1700) / P15T1700
+• c_P15T2401 = (P15T2410 – P15T2400) / P15T2400
+• c_F15T4901 = (F15T4910 – F15T4900) / F15T4900
+• c_GRAD01 = GRAD10 – GRAD00
+• c_HH01 = (HH10 – HH00) / HH00
+• c_PHH01 = (PHH10 – PHH00) / PHH00
+• c_HOMS01 = (HOMS10 – HOMS00) / HOMS00
+• c_OCC01 = (OCC10 – OCC00) / OCC00
+• c_AVHM01 = AVHM10 – AVHM00
+• c_AVRM01 = AVRM10 – AVRM00
+
+2020 and 2010
+
+• c_CBR01 = CBR10 – CBR00
+
+Change in proportions (p\_ variables)
+
+• c_P5U01 = p_P5U10 – p_P5U00
+• c_P12U01 = p_P12U10 – p_P12U00
+• c_P15U01 = p_P15U10 – p_P15U00
+• c_P18U01 = p_P18U10 – p_P18U00
+• c_PM18U01 = p_PM18U10 – p_PM18U00
+• c_PF18U01 = p_PF18U10 – p_PF18U00
+• cp_P6T1401 = p_P6T1410 – p_P6T1400
+• c_pP15T1701 = p_P15T1710 – p_P15T1700
+• c_pF15T4901 = p_F15T4910 – p_F15T4900
+• c_NACI01 = p_NACI10 – p_NACI00
+• c_NACO01 = p_NACO10 – p_NACO00
+• c_P5RES01 = p_P5RES10 – p_P5RES00
+• c_P5NRES01 = p_P5NRES10 – p_P5NRES00
+• c_PIND01 = p_PIND10 – p_PIND00
+• c_PINDNS01 = p_PINDNS10 – p_PINDNS00
+• c_PINDS01 = p_PINDS10 – p_PINDS00
+• c_P15AN01 = p_P15AN10 – p_P15AN00
+• c_P614NS01 = p_P614NS10 – p_P614NS00
+• c_P15NS01 = p_P15NS10 – p_P15NS00
+• c_P15PRI01 = p_P15PRI10 – p_P15PRI00
+• c_P15SC01 = p_P15SC10 – p_P15SC00
+• c_P18HI01 = p_P18HI01 – p_P18HI00
+• c_PEA01 = p_PEA10 – p_PEA00
+
+Prepared by ([Center for Spatial Data Science](https://spatial.uchicago.edu/)). Last updated June 7, 2023. Data provided "as is," no warranties.
