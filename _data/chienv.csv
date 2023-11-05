@@ -1,0 +1,26 @@
+Variable,Description
+cid,Dataset identification code
+geoid,Full FIPS code
+tracte,6-digit tract FIPS code
+treesN,Total number of trees (represented as unique polygons) by tract. Derived from polygon data digitized as trees from Lidar raw sonar data, originally processed by the Spatial Analysis Laboratory, made available through the Regional Trees Initiative and U.S. Forest Service, and finally cleaned, processed, and aggregated to census tract scale by the Health Regions & Policies Lab. 
+treeCrDn,Percentage of total census tract area covered by tree polygons (with each polygon representing the tree crown, or maximum tree crown width). Derived from polygon data digitized as trees from Lidar raw sonar data, originally processed by the Spatial Analysis Laboratory, made available through the Regional Trees Initiative and U.S. Forest Service, and finally cleaned, processed, and aggregated to census tract scale by the Health Regions & Policies Lab. 
+svi,Social Vulnerability Index via CDC using 2018 ACS 5-year data.
+hardship,Economic Hardship Index, calculated using 2018 ACS 5-year data using standard approach using six components (unemployment, dependency, education, income, crowded housing, poverty) by Center for Spatial Data Science.
+floodSusc,Urban flood susceptibility index, via FEMA.
+heatIsl,Measure of land surface temperature to approximate the heat island effect. 1km grid raw data aggregated to census tract scale using average of grid values. Values close to 1 represent grid cells that have high summer temperatures relative to all other cells in the Chicago area; values closer to 0 represent lower values. Derived from mean Land Surface Temperature (LST) collected by NASA’s MODIS satellite (MOD11 dataset).
+logTraf,Logged traffic volume, using street segment volume from IDOT.
+pm25NN,Average PM 2.5 estimates during summer (Jun-Aug) from 2014-2018, calculated using a neural network model via Center for Spatial Data Science.
+asthmaAv,Number of Emergency Dept. asthma visits (age 0-18) between 2013-2018, calculated at the zip code and shared via the Chicago Health Atlas.
+asthmaAdj,Age adjusted rate of Emergency Dept. asthma visits (age 0-18) between 2013-2018, calculated at the zip code and shared via the Chicago Health Atlas.
+totPopE,total population, ACS 2018 5-year estimate via OEPS
+whiteP,Percentage of population with race identified as white alone
+blackP,Percentage of population with race identified as Black or African American alone
+amIndP,Percentage of population with race identified as Native American or Alaska Native alone
+asianP,Percentage of population with race identified as Asian alone
+hispP,Percentage of population with ethnicity identified as of Hispanic or Latinx origin
+otherP,Percentage of population with race not mentioned in any of the options above (includes two race or more races)
+childrnP,Percentage of population under the age of 18.
+over65P,Percentage of population over the age of 65.
+zip_code,intersecting Zip Code area
+commarea_n,Community Area Number	
+community,Community Area Name
