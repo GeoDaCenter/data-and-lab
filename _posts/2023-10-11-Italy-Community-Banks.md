@@ -67,4 +67,4 @@ Italy_banks.shp – 261 points in UTM zone 32, no Sardinia or Elba
 |SERV_11/17|service_w2011: Net interest income /Total operating revenues|
 |EXPE_11/17|operexp_ta_w2011: Operating expenses / Total assets|
 
-Prepared by ([Center for Spatial Data Science](https://spatial.uchicago.edu/)). Last updated Oct 11, 2023. Data provided "as is," no warranties.
+Prepared by ([Center for Spatial Data Science](https://spatial.uchicago.edu/)). Last updated Jan 15, 2025. Data provided "as is," no warranties.
