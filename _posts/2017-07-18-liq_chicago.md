@@ -15,12 +15,9 @@ tags:
 - Anselin lab
 categories:
 twitter_text:
+geojson: '../data/liq_chicago.geojson'
 introduction: "Liquor stores in Chicago. Scraped from Google Maps in 2015."
 ---
-<div id="root" data-geojson="../data/liq_chicago.geojson"></div>
-
-<br>
-
 
 [DOWNLOAD DATA](../data/liquor.zip)
 

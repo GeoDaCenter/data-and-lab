@@ -15,12 +15,9 @@ tags:
 - Anselin lab
 categories:
 twitter_text:
+geojson: '../data/chicago_sup.geojson'
 introduction: "2015 Chicago grocery stores (scraped from Google Maps)."
 ---
-<div id="root" data-geojson="../data/chicago_sup.geojson"></div>
-
-<br>
-
 
 [DOWNLOAD DATA](../data/grocery.zip)
 

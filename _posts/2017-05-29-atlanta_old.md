@@ -17,13 +17,9 @@ tags:
 - research
 categories:
 twitter_text:
+geojson: '../data/atlanta.geojson'
 introduction: '1980s-90s homicides and socio-economics in Atlanta, GA'
 ---
-<div id="root" data-geojson="../data/atlanta.geojson"></div>
-
-<br>
-
-
 
 [DOWNLOAD DATA](../data/atlanta_hom.zip)
 

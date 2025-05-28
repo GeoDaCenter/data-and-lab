@@ -15,11 +15,9 @@ tags:
   - open data
 categories:
 twitter_text:
+geojson: '../data/italy_banks.geojson'
 introduction: 'Italy community bank performance indicators for 2011-17'
 ---
-<div id="root" data-geojson="../data/italy_banks.geojson"></div>
-
-<br>
 
 [DOWNLOAD DATA](../data/italy_banks.zip)
 

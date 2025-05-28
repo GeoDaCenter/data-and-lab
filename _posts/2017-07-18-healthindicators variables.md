@@ -16,13 +16,9 @@ tags:
 - Census
 categories:
 twitter_text:
+geojson: '../data/HealthIndicators_withpc.geojson'
 introduction: "Health indicators for Chicago community areas (2005-11)."
 ---
-<div id="root" data-geojson="../data/HealthIndicators_withpc.geojson"></div>
-
-<br>
-
-
 
 [DOWNLOAD DATA](../data/healthIndicators.zip)
 

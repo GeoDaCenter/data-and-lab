@@ -14,11 +14,9 @@ tags:
   - open data
 categories:
 twitter_text:
+geojson: '../data/Chi_Carjackings.geojson'
 introduction: 'Point locations of carjackings in 2020 Chicago'
 ---
-<div id="root" data-geojson="../data/Chi_Carjackings.geojson"></div>
-
-<br>
 
 [DOWNLOAD DATA](../data/Chi_Carjackings.zip)
 

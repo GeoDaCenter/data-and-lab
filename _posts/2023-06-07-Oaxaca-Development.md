@@ -15,11 +15,9 @@ tags:
   - open data
 categories:
 twitter_text:
+geojson: '../data/oaxaca.geojson'
 introduction: 'Poverty and food insecurity indicators and census variables for 2010 and 2020 in the State of Oaxaca, Mexico'
 ---
-<div id="root" data-geojson="../data/oaxaca.geojson"></div>
-
-<br>
 
 [DOWNLOAD DATA](../data/Oaxaca.zip)
 

@@ -14,6 +14,7 @@ tags:
 - ESDA
 categories:
 twitter_text:
+geojson: '../data/buenosaires.geojson'
 introduction: '1999 Elections for Argentinean Congress'
 ---
 [DOWNLOAD DATA](../data/buenosaires.zip)

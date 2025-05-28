@@ -15,6 +15,7 @@ tags:
 - csv/txt
 categories:
 twitter_text:
+geojson: '../data/boston.geojson'
 introduction: 'Boston data for hedonic house price modeling (1970s).'
 ---
 

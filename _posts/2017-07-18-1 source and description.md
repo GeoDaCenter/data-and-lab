@@ -16,6 +16,7 @@ tags:
 - Anselin lab
 categories:
 twitter_text:
+geojson: '../data/Abandoned_Vehicles_Map.csv'
 introduction: '2011 abandoned vehicles in Chicago (311 complaints).'
 ---
 [DOWNLOAD DATA](../data/Abandoned_Vehicles_Map.csv)

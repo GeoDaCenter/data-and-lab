@@ -14,11 +14,9 @@ tags:
   - open data
 categories:
 twitter_text:
+geojson: '../data/ceara.geojson'
 introduction: 'Zika and Microcephaly infections and socio-economic profiles for 2013-2016'
 ---
-<div id="root" data-geojson="../data/ceara.geojson"></div>
-
-<br>
 
 [DOWNLOAD DATA](../data/ceara.zip)
 

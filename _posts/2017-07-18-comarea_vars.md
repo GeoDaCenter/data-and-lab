@@ -17,12 +17,9 @@ tags:
 - Anselin lab
 categories:
 twitter_text:
+geojson: '../data/ComArea_ACS14_f.geojson'
 introduction: "2014 public health indicators for Chicago community areas."
 ---
-<div id="root" data-geojson="../data/ComArea_ACS14_f.geojson"></div>
-
-<br>
-
 
 [DOWNLOAD DATA](../data/comarea.zip)
 

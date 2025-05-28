@@ -16,14 +16,9 @@ tags:
 - Anselin lab
 categories:
 twitter_text:
+geojson: '../data/walnut_hills.geojson'
 introduction: "Crime and socio-demographics data for the Clifton, Walnut Hills, Evanston, and Avondale neighborhoods in Cincinnati, OH for 08-12/2008."
 ---
-<div id="root" data-geojson="../data/walnut_hills.geojson"></div>
-
-<br>
-
-
-
 
 [DOWNLOAD DATA](../data/walnuthills_updated.zip)
 

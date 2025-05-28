@@ -16,13 +16,9 @@ tags:
 - open data
 categories:
 twitter_text:
+geojson: '../data/County_election_2012_16.geojson'
 introduction: "US Presidential election results by county (2012 and 2016)."
 ---
-<div id="root" data-geojson="../data/County_election_2012_16.geojson"></div>
-
-<br>
-
-
 
 [DOWNLOAD DATA](../data/election.zip)
 

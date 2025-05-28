@@ -15,11 +15,9 @@ tags:
 - Census
 categories:
 twitter_text:
+geojson: '../data/sacramento2.geojson'
 introduction: "Establishment by type for the Sacramento, CA Metro Area (1998 and 2001)."
 ---
-<div id="root" data-geojson="../data/sacramento2.geojson"></div>
-
-<br>
 
 [DOWNLOAD DATA](../data/SacramentoMSA2.zip)
 

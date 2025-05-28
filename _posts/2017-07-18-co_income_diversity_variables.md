@@ -16,13 +16,9 @@ tags:
 - open data
 categories:
 twitter_text:
+geojson: '../data/income_diversity.geojson'
 introduction: "2000 US county health, income and diversity data."
 ---
-<div id="root" data-geojson="../data/income_diversity.geojson"></div>
-
-<br>
-
-
 
 [DOWNLOAD DATA](../data/income_diversity.zip)
 

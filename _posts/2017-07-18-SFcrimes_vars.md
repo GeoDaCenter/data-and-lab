@@ -15,13 +15,9 @@ tags:
 - Anselin lab
 categories:
 twitter_text:
+geojson: '../data/SFcartheft_july12.geojson'
 introduction: "Incidents of robberies, drugs/narcotics possession or sale, vehicle theft, and vandalism in San Francisco (06-12/2012)."
 ---
-<div id="root" data-geojson="../data/SFcartheft_july12.geojson"></div>
-
-<br>
-
-
 
 [DOWNLOAD DATA](../data/SFCrime_July_Dec2012.zip)
 

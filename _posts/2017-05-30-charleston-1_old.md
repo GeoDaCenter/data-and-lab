@@ -15,11 +15,9 @@ tags:
 - Census
 categories:
 twitter_text:
+geojson: '../data/charleston.geojson'
 introduction: '2000 Socio-Economic Census Tract Data for Charleston, SC'
 ---
-<div id="root" data-geojson="../data/charleston.geojson"></div>
-
-<br>
 
 [DOWNLOAD DATA](../data/CharlestonMSA.zip)
 

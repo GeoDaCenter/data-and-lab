@@ -15,12 +15,9 @@ tags:
 - Census
 categories:
 twitter_text:
+geojson: '../data/sacramento1.geojson'
 introduction: "2000 Socio-Economic Census Tract Data for the Sacramento MSA, CA"
 ---
-<div id="root" data-geojson="../data/sacramento1.geojson"></div>
-
-<br>
-
 [DOWNLOAD DATA](../data/sacramento.zip)
 
 

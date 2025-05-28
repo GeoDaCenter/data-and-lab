@@ -14,13 +14,9 @@ tags:
 - open data
 categories:
 twitter_text:
+geojson: '../data/KingCountyHouseSales2015.geojson'
 introduction: "Home sale prices for Seattle and King County, WA (2014-2015)."
 ---
-<div id="root" data-geojson="../data/KingCountyHouseSales2015.geojson"></div>
-
-<br>
-
-
 
 [DOWNLOAD DATA](../data/kingcounty.zip)
 

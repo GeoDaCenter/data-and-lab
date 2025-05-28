@@ -15,14 +15,9 @@ tags:
 - open data
 categories:
 twitter_text:
+geojson: '../data/colmunic1.geojson'
 introduction: "Malaria Incidence in Colombian municipalities"
 ---
-<div id="root" data-geojson="../data/colmunic1.geojson"></div>
-
-<br>
-
-
-
 
 [DOWNLOAD DATA](../data/malariacolomb.zip)
 

@@ -16,13 +16,9 @@ tags:
 - rates
 categories:
 twitter_text:
+geojson: '../data/SFCrime_blocks.geojson'
 introduction: "Count of robberies, drugs/narcotics possession or sale, vehicle theft, and vandalism by San Francisco block group (06-12/2012)."
 ---
-<div id="root" data-geojson="../data/SFCrime_blocks.geojson"></div>
-
-<br>
-
-
 
 [DOWNLOAD DATA](../data/SFCrime_July_Dec2012.zip)
 
