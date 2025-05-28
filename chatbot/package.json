@@ -1,0 +1,39 @@
+{
+  "name": "geoda_tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "OpenAssistant using GeoDa tools for data classification",
+  "scripts": {
+    "start": "node esbuild.config.mjs --start",
+    "build": "node esbuild.config.mjs"
+  },
+  "author": "Xun Li <lixun910@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@openassistant/core": "0.5.1",
+    "@openassistant/echarts": "0.5.1",
+    "@openassistant/geoda": "0.5.1",
+    "@openassistant/keplergl": "0.5.1",
+    "@openassistant/map": "0.5.1",
+    "@openassistant/osm": "0.5.1",
+    "@openassistant/tables": "0.5.1",
+    "@openassistant/ui": "/Users/xun/github/openassistant/packages/ui/openassistant-ui-0.5.1.tgz",
+    "@openassistant/utils": "0.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@types/redux-logger": "^3",
+    "autoprefixer": "^10.4.20",
+    "dotenv": "^16.5.0",
+    "esbuild": "^0.24.2",
+    "esbuild-plugin-polyfill-node": "^0.3.0",
+    "esbuild-plugin-tailwindcss": "^1.2.1",
+    "open": "^10.1.2",
+    "postcss": "^8.4.49",
+    "redux-logger": "^3.0.6",
+    "tailwind": "^4.0.0"
+  }
+}

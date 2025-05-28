@@ -64,16 +64,16 @@
   <meta name="msapplication-wide310x150logo" content="widetile.png" />
   <meta name="msapplication-square310x310logo" content="largetile.png" />
   <!-- Android Lolipop Theme Color -->
-  <meta name="theme-color" content="{{ page.color }}">
+  <meta name="theme-color" content="light">
 
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ " /assets/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend:
     site.baseurl | prepend: site.url }}" />
 
   <link href="//d1a3f4spazzrp4.cloudfront.net/uber-fonts/4.0.0/superfine.css" rel="stylesheet">
-  <link href="//api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="{{ " /assets/css/ai.css" | prepend: site.baseurl }}">
   <style>
     table {
       border-collapse: collapse;
@@ -128,5 +128,10 @@
     }
 
     /* Fix pop up and css issues. */
+    .post-content {
+      margin-right: 400px;
+    }
+
+
   </style>
 </head>
