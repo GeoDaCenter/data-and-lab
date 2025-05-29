@@ -1,77 +1,14 @@
 import { AiAssistant, AiAssistantConfig, ConfigPanel } from '@openassistant/ui';
-import { SpatialWeightsComponent } from '@openassistant/tables';
-import {
-  dataClassify,
-  DataClassifyTool,
-  spatialWeights,
-  SpatialWeightsTool,
-  GetGeometries,
-  globalMoran,
-  GlobalMoranTool,
-  spatialRegression,
-  SpatialRegressionTool,
-  lisa,
-  LisaTool,
-  spatialJoin,
-  SpatialJoinTool,
-  buffer,
-  BufferTool,
-  spatialFilter,
-  CentroidTool,
-  centroid,
-  DissolveTool,
-  dissolve,
-  AreaTool,
-  area,
-  length,
-  perimeter,
-  GetValues,
-} from '@openassistant/geoda';
-import {
-  geocoding,
-  routing,
-  getUsStateGeojson,
-  getUsZipcodeGeojson,
-  getUsCountyGeojson,
-  RoutingTool,
-  roads,
-  RoadsTool,
-  IsochroneTool,
-  isochrone,
-  queryUSZipcodes,
-} from '@openassistant/osm';
 import { KeplerGlComponent } from '@openassistant/keplergl';
-import {
-  GetDataset,
-  keplergl,
-  KeplerglTool,
-  downloadMapData,
-} from '@openassistant/map';
-import {
-  histogram,
-  HistogramTool,
-  pcp,
-  PCPTool,
-  boxplot,
-  BubbleChartTool,
-  bubbleChart,
-  scatterplot,
-  ScatterplotTool,
-} from '@openassistant/plots';
-import {
-  HistogramPlotComponent,
-  BoxplotComponent,
-  ParallelCoordinateComponent,
-  ScatterplotComponent,
-  BubbleChartComponent,
-  MoranScatterComponent,
-} from '@openassistant/echarts';
 import { useAssistant, useToolCache } from '@openassistant/core';
 import { getValuesFromGeoJSON } from '@openassistant/utils';
+import { GetValues, GetGeometries } from '@openassistant/geoda';
+import { GetDataset } from '@openassistant/map';
 
 import { useEffect, useState } from 'react';
 import { createWelcomeMessage } from './initial-messages';
 import { INSTRUCTIONS, PROMPT_IDEAS } from './constants';
+import { createTools } from './tools';
 
 function isGeoJson(obj: unknown): obj is GeoJSON.FeatureCollection {
   return (
@@ -182,7 +119,7 @@ export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
                 {datasetName}" dataset. I can help applying spatial analysis to
                 this dataset.{' '}
               </span>
-              <div className="w-full h-[180px]">
+              <div className="w-full">
                 <KeplerGlComponent
                   datasetId={datasetName}
                   datasetForKepler={datasetForKepler}
@@ -197,6 +134,7 @@ export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
                 initialConfig={aiConfig}
                 onConfigChange={onAiConfigChange}
                 showMapBoxToken={true}
+                showCheckConnectionButton={true}
               />
             </div>
           );
@@ -264,257 +202,13 @@ export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
     throw new Error(`Dataset ${datasetName} not found`);
   };
 
-  // Configure the dataClassify tool
-  const classifyTool: DataClassifyTool = {
-    ...dataClassify,
-    context: {
-      ...dataClassify.context,
-      getValues,
-    },
-  };
-
-  const weightsTool: SpatialWeightsTool = {
-    ...spatialWeights,
-    context: {
-      ...spatialWeights.context,
-      getGeometries,
-    },
-    component: SpatialWeightsComponent,
-  };
-
-  const globalMoranTool: GlobalMoranTool = {
-    ...globalMoran,
-    context: {
-      ...globalMoran.context,
-      getValues,
-    },
-    component: MoranScatterComponent,
-  };
-
-  const regressionTool: SpatialRegressionTool = {
-    ...spatialRegression,
-    context: {
-      ...spatialRegression.context,
-      getValues,
-    },
-  };
-
-  const lisaTool: LisaTool = {
-    ...lisa,
-    context: {
-      ...lisa.context,
-      getValues,
-      getGeometries,
-    },
+  const tools = createTools({
+    getValues,
+    getGeometries,
+    getDataset,
+    getMapboxToken: () => aiConfig.mapBoxToken || '',
     onToolCompleted,
-  };
-
-  const spatialJoinTool: SpatialJoinTool = {
-    ...spatialJoin,
-    context: {
-      ...spatialJoin.context,
-      getValues,
-      getGeometries,
-    },
-    onToolCompleted,
-  };
-
-  const spatialFilterTool = {
-    ...spatialFilter,
-    context: {
-      ...spatialFilter.context,
-      getValues,
-      getGeometries,
-    },
-    onToolCompleted,
-  };
-
-  const getUsStateGeojsonTool = {
-    ...getUsStateGeojson,
-    onToolCompleted,
-  };
-
-  const getUsZipcodeGeojsonTool = {
-    ...getUsZipcodeGeojson,
-    onToolCompleted,
-  };
-
-  const getUsCountyGeojsonTool = {
-    ...getUsCountyGeojson,
-    onToolCompleted,
-  };
-
-  const keplerglTool: KeplerglTool = {
-    ...keplergl,
-    context: {
-      ...keplergl.context,
-      getDataset,
-    },
-    component: KeplerGlComponent,
-  };
-
-  const routingTool: RoutingTool = {
-    ...routing,
-    context: {
-      ...routing.context,
-      getMapboxToken: () => aiConfig.mapBoxToken || '',
-    },
-    onToolCompleted,
-  };
-
-  const isochroneTool: IsochroneTool = {
-    ...isochrone,
-    context: {
-      ...isochrone.context,
-      getMapboxToken: () => aiConfig.mapBoxToken || '',
-    },
-  };
-
-  const bufferTool: BufferTool = {
-    ...buffer,
-    context: {
-      ...buffer.context,
-      getGeometries,
-    },
-    onToolCompleted,
-  };
-
-  const centroidTool: CentroidTool = {
-    ...centroid,
-    context: {
-      ...centroid.context,
-      getGeometries,
-    },
-    onToolCompleted,
-  };
-
-  const dissolveTool: DissolveTool = {
-    ...dissolve,
-    context: {
-      ...dissolve.context,
-      getGeometries,
-    },
-    onToolCompleted,
-  };
-
-  const lengthTool = {
-    ...length,
-    context: {
-      ...length.context,
-      getGeometries,
-    },
-  };
-
-  const areaTool: AreaTool = {
-    ...area,
-    context: {
-      ...area.context,
-      getGeometries,
-    },
-  };
-
-  const perimeterTool = {
-    ...perimeter,
-    context: {
-      ...perimeter.context,
-      getGeometries,
-    },
-  };
-
-  const roadsTool: RoadsTool = {
-    ...roads,
-    context: {
-      ...roads.context,
-      getGeometries,
-    },
-    onToolCompleted,
-  };
-
-  const downloadMapDataTool = {
-    ...downloadMapData,
-    context: {},
-    onToolCompleted,
-  };
-
-  const boxplotTool = {
-    ...boxplot,
-    context: {
-      ...boxplot.context,
-      getValues,
-    },
-    component: BoxplotComponent,
-  };
-
-  const bubbleChartTool: BubbleChartTool = {
-    ...bubbleChart,
-    context: {
-      ...bubbleChart.context,
-      // @ts-expect-error FIX type
-      getValues,
-    },
-    component: BubbleChartComponent,
-  };
-
-  const histogramTool: HistogramTool = {
-    ...histogram,
-    context: {
-      ...histogram.context,
-      // @ts-expect-error FIX type
-      getValues,
-    },
-    component: HistogramPlotComponent,
-  };
-
-  const pcpTool: PCPTool = {
-    ...pcp,
-    context: {
-      ...pcp.context,
-      // @ts-expect-error FIX type
-      getValues,
-    },
-    component: ParallelCoordinateComponent,
-  };
-
-  const scatterplotTool: ScatterplotTool = {
-    ...scatterplot,
-    context: {
-      ...scatterplot.context,
-      // @ts-expect-error FIX type
-      getValues,
-    },
-    component: ScatterplotComponent,
-  };
-
-  const tools = {
-    downloadMapData: downloadMapDataTool,
-    dataClassify: classifyTool,
-    spatialWeights: weightsTool,
-    globalMoran: globalMoranTool,
-    spatialRegression: regressionTool,
-    lisa: lisaTool,
-    spatialJoin: spatialJoinTool,
-    spatialFilter: spatialFilterTool,
-    getUsStateGeojson: getUsStateGeojsonTool,
-    getUsZipcodeGeojson: getUsZipcodeGeojsonTool,
-    getUsCountyGeojson: getUsCountyGeojsonTool,
-    queryUSZipcodes,
-    geocoding,
-    buffer: bufferTool,
-    centroid: centroidTool,
-    dissolve: dissolveTool,
-    length: lengthTool,
-    area: areaTool,
-    perimeter: perimeterTool,
-    keplergl: keplerglTool,
-    routing: routingTool,
-    roads: roadsTool,
-    isochrone: isochroneTool,
-    boxplot: boxplotTool,
-    bubbleChart: bubbleChartTool,
-    histogram: histogramTool,
-    pcp: pcpTool,
-    scatterplot: scatterplotTool,
-  };
+  });
 
   return (
     <div className="px-4 py-8">
@@ -522,9 +216,11 @@ export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
         {welcomeMessage ? (
           <AiAssistant
             name="GeoDa Assistant"
-            modelProvider="openai"
-            model="gpt-4o"
-            apiKey={process.env.OPENAI_API_KEY || ''}
+            modelProvider={aiConfig.provider}
+            model={aiConfig.model}
+            apiKey={aiConfig.apiKey}
+            temperature={aiConfig.temperature}
+            topP={aiConfig.topP}
             tools={tools}
             welcomeMessage={welcomeMessage}
             instructions={`${instructions}\n${additionalInstructions}`}
