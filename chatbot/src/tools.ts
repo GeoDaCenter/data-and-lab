@@ -165,6 +165,12 @@ export function createTools(deps: ToolDependencies) {
 
   const keplerglTool: KeplerglTool = {
     ...keplergl,
+    description: `Create a map using kepler.gl. For basic map visualization, you can omit color related parameters.
+- When creating a map for a variable, please use dataClassify tool to classify the data into bins or unique values first.
+- Please generate colorBrewer colors if user does not provide colors.
+- For colorType 'breaks', the colorMap should be format like: [{value: 3, color: '#f7fcb9'}, {value: 10, color: '#addd8e'}, {value: null, color: '#31a354'}]
+- For colorType 'unique', the colorMap should be format like: [{value: 'a', color: '#f7fcb9'}, {value: 'b', color: '#addd8e'}, {value: 'c', color: '#31a354'}]
+- For geojson dataset, geometryColumn should be '_geojson' and mapType should be 'geojson' even if the geojson is a collection of points.`,
     context: {
       ...keplergl.context,
       getDataset,

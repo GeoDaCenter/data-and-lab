@@ -1,6 +1,6 @@
 import { AiAssistant, AiAssistantConfig, ConfigPanel } from '@openassistant/ui';
 import { KeplerGlComponent } from '@openassistant/keplergl';
-import { useAssistant, useToolCache } from '@openassistant/core';
+import { MessageModel, useAssistant, useToolCache } from '@openassistant/core';
 import { getValuesFromGeoJSON } from '@openassistant/utils';
 import { GetValues, GetGeometries } from '@openassistant/geoda';
 import { GetDataset } from '@openassistant/map';
@@ -19,7 +19,19 @@ function isGeoJson(obj: unknown): obj is GeoJSON.FeatureCollection {
   );
 }
 
-export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
+export function AiChat({
+  geojsonUrl,
+  messages,
+  setMessages,
+  ideas,
+  setIdeas,
+}: {
+  geojsonUrl?: string | null;
+  messages: MessageModel[];
+  setMessages: React.Dispatch<React.SetStateAction<MessageModel[]>>;
+  ideas: { title: string; description: string }[];
+  setIdeas: React.Dispatch<React.SetStateAction<{ title: string; description: string }[]>>;
+}) {
   const [geojson, setGeojson] = useState<GeoJSON.FeatureCollection | null>(
     null
   );
@@ -37,18 +49,14 @@ export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
     isReady: false,
     provider: 'openai',
     model: 'gpt-4.1',
-    apiKey: process.env.OPENAI_API_KEY || '',
+    apiKey: '',
     temperature: 0.0,
     topP: 1.0,
-    mapBoxToken: process.env.MAPBOX_TOKEN || '',
+    mapBoxToken: '',
   });
   const onAiConfigChange = (config: AiAssistantConfig) => {
     setAiConfig(config);
   };
-
-  const [ideas, setIdeas] = useState<{ title: string; description: string }[]>(
-    []
-  );
 
   // use dataset meta data in LLM instructions
   const instructions = `${INSTRUCTIONS}\n\n${additionalInstructions}`;
@@ -113,12 +121,7 @@ export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
             data
           );
           setWelcomeMessage(
-            <div className="flex flex-col gap-4">
-              <span>
-                Hello! I am your GeoDa AI assistant. Here is the map of the "
-                {datasetName}" dataset. I can help applying spatial analysis to
-                this dataset.{' '}
-              </span>
+            <div className="flex flex-col gap-2">
               <div className="w-full">
                 <KeplerGlComponent
                   datasetId={datasetName}
@@ -127,8 +130,10 @@ export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
                 />
               </div>
               <span>
-                Please select your prefered LLM model and use your API key to
-                start asking questions.
+                Hello! I am your GeoDa AI assistant. Here is the map of the "
+                {datasetName}" dataset. I can help applying spatial analysis to
+                this dataset. Please select your prefered LLM model and use your
+                API key to start asking questions.
               </span>
               <ConfigPanel
                 initialConfig={aiConfig}
@@ -211,8 +216,8 @@ export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
   });
 
   return (
-    <div className="px-4 py-8">
-      <div className="bg-white h-[calc(100vh-200px)] w-full">
+    <div className="w-full h-full mb-3">
+      <div className="bg-white h-[70vh] w-full">
         {welcomeMessage ? (
           <AiAssistant
             name="GeoDa Assistant"
@@ -226,8 +231,8 @@ export function AiChat({ geojsonUrl }: { geojsonUrl?: string | null }) {
             instructions={`${instructions}\n${additionalInstructions}`}
             ideas={ideas}
             onRefreshIdeas={generateIdeas}
-            // onMessagesUpdated={setMessages}
-            // initialMessages={initialMapMessage}
+            onMessagesUpdated={setMessages}
+            initialMessages={messages}
           />
         ) : (
           <div className="flex items-center justify-center h-full">

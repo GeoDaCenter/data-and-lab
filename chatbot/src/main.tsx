@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from 'next-themes';
 import { HeroUIProvider } from '@heroui/react';
-import { AiChat } from './assistant';
+
+import { AiChatApp } from './app';
 import './index.css';
 
 // Ensure theme is set immediately
@@ -12,15 +13,12 @@ if (typeof document !== 'undefined') {
 
 const root = document.getElementById('openassistant-root');
 
-// get the attribute data-geojson
-const geojsonUrl = root?.getAttribute('data-geojson');
-
 if (root) {
   ReactDOM.createRoot(root).render(
     <React.StrictMode>
       <HeroUIProvider>
         <ThemeProvider attribute="data-theme" defaultTheme="light">
-          <AiChat geojsonUrl={geojsonUrl} />
+          <AiChatApp />
         </ThemeProvider>
       </HeroUIProvider>
     </React.StrictMode>

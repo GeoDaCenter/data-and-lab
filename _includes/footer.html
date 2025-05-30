@@ -2,10 +2,8 @@
     <p>Maintained by lixun910 Template by <a href="http://willianjusten.com.br">Willian Justen</a></p>
 </footer>
 {% if page.geojson %}
-<div data-theme="light" id="openassistant-root" data-geojson="{{ page.geojson }}"
-    style="position: fixed; top: 130px; bottom: 40px;  right: 1rem; min-width: 450px; width: 50vw; height: calc(100vh - 150px); z-index: 1000; background: white; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); overflow: hidden;" />
+<div data-theme="light" id="openassistant-root" data-geojson="{{ page.geojson }}" />
 {% endif %}
 
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
-<!-- <script src="{{ "/assets/js/bundle.js" | prepend: site.baseurl }}"></script> -->
 <script src="{{ "/assets/js/ai.js" | prepend: site.baseurl }}"></script>
