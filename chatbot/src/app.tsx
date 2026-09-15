@@ -18,7 +18,7 @@ const root = document.getElementById('openassistant-root');
 const geojsonUrl = root?.getAttribute('data-geojson');
 
 export function AiChatApp() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<MessageModel[]>([]);
   const [ideas, setIdeas] = useState<{ title: string; description: string }[]>([]);
   const targetRef = React.useRef(null);

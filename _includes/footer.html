@@ -1,9 +1,17 @@
 <footer>
     <p>Maintained by lixun910 Template by <a href="http://willianjusten.com.br">Willian Justen</a></p>
 </footer>
-{% if page.geojson %}
-<div data-theme="light" id="openassistant-root" data-geojson="{{ page.geojson }}" />
-{% endif %}
 
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
+{% if page.geojson %}
+<div data-theme="light" id="openassistant-root" data-geojson="{{ page.geojson }}" />
+
+<script src="{{ "/assets/js/bundle.js" | prepend: site.baseurl }}"></script>
+<script>
+    // bundle.js and ai.js each bundle their own deck.gl (8.8.9 vs 8.9.36) and
+    // abort on load when they see the other's version marker on globalThis.deck.
+    // Clear the marker so the second bundle can initialize.
+    delete window.deck;
+</script>
 <script src="{{ "/assets/js/ai.js" | prepend: site.baseurl }}"></script>
+{% endif %}

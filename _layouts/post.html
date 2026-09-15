@@ -7,6 +7,9 @@
 
         <section class="post">
             <article role="article" id="post" class="post-content" itemprop="articleBody">
+                {% if page.geojson %}
+                <div id="root" data-geojson="{{ page.geojson }}"></div>
+                {% endif %}
                 {{ content }}
             </article>
 
