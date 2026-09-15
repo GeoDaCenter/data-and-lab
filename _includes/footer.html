@@ -1,9 +1,8 @@
 <footer>
     <p>Maintained by lixun910 Template by <a href="http://willianjusten.com.br">Willian Justen</a></p>
 </footer>
-{% if page.geojson %}
-<div data-theme="light" id="openassistant-root" data-geojson="{{ page.geojson }}" />
-{% endif %}
 
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/assets/js/ai.js" | prepend: site.baseurl }}"></script>
+{% if page.geojson %}
+<script type="module" src="{{ "/assets/js/map.js" | prepend: site.baseurl }}"></script>
+{% endif %}

@@ -4,8 +4,7 @@
   "description": "A simple template for Jekyll Blogs.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "test",
-    "build:reactgeoda": "git submodule update --init --recursive && cd reactgeoda && yarn && cd library && yarn && yarn build && cp out/*.js ../../assets/js"
+    "test": "test"
   },
   "keywords": [
     "frontend",

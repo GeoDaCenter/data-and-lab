@@ -1,0 +1,108 @@
+/* Styles for the deck.gl dataset map. Loaded only on pages that have one. */
+
+#root {
+  width: 100%;
+  height: 340px;
+  position: relative;
+  z-index: 5;
+  margin-top: -40px;
+  overflow: hidden;
+}
+
+/* Shown while the data loads, and for datasets with nothing to draw. */
+.geoda-map-message {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  background: #11151c;
+}
+
+.geoda-map-variable {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(17, 21, 28, 0.85);
+  color: #fff;
+  font-size: 0.78rem;
+}
+
+.geoda-map-variable select {
+  max-width: 12rem;
+  padding: 0.15rem 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  background: #1b2129;
+  color: #fff;
+  font-size: 0.78rem;
+}
+
+/* Compact, and clear of the basemap attribution in the same corner. */
+.geoda-map-legend {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 2.5rem;
+  z-index: 6;
+  padding: 0.3rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(17, 21, 28, 0.88);
+  color: #fff;
+  font-size: 0.65rem;
+  line-height: 1.15;
+}
+
+.geoda-map-legend-title {
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.geoda-map-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.geoda-map-swatch {
+  flex: none;
+  width: 0.7rem;
+  height: 0.62rem;
+  border-radius: 2px;
+}
+
+/* No display property: the element is toggled with the hidden attribute. */
+.geoda-map-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  max-width: 18rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(17, 21, 28, 0.92);
+  color: #fff;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  pointer-events: none;
+}
+
+.geoda-map-tip-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.geoda-map-tip-field {
+  font-weight: 600;
+}
+
+.geoda-map-tip-value {
+  margin-left: auto;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
