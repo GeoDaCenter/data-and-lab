@@ -113,6 +113,31 @@
       margin-top: -40px;
     }
 
+    /* Hint shown when the map is scrolled without the zoom modifier key. */
+    #root::after {
+      content: var(--map-zoom-hint, "Hold Ctrl to zoom");
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translate(-50%, -0.5rem);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      z-index: 10;
+    }
+
+    .map-zoom-hint-visible #root::after {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
     .geoda-kepler-map {
       padding: 0 !important;
       height: 100% !important;

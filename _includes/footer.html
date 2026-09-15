@@ -8,6 +8,31 @@
 
 <script src="{{ "/assets/js/bundle.js" | prepend: site.baseurl }}"></script>
 <script>
+    // The map zooms on a plain wheel event, which swallows page scrolling.
+    // Require the platform modifier instead (Cmd on macOS, Ctrl elsewhere) and
+    // say so, the way Google Maps does.
+    (function () {
+        var root = document.getElementById('root');
+        if (!root) return;
+        var isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform || navigator.userAgent);
+        document.documentElement.style.setProperty(
+            '--map-zoom-hint',
+            '"Hold ' + (isMac ? '⌘' : 'Ctrl') + ' to zoom"'
+        );
+        var hideTimer;
+        root.addEventListener('wheel', function (event) {
+            if (event.ctrlKey || event.metaKey) return;
+            // Let the page scroll, but keep the map from zooming underneath it.
+            event.stopPropagation();
+            document.documentElement.classList.add('map-zoom-hint-visible');
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(function () {
+                document.documentElement.classList.remove('map-zoom-hint-visible');
+            }, 1200);
+        }, { capture: true });
+    })();
+</script>
+<script>
     // bundle.js and ai.js each bundle their own deck.gl (8.8.9 vs 8.9.36) and
     // abort on load when they see the other's version marker on globalThis.deck.
     // Clear the marker so the second bundle can initialize.
