@@ -11,11 +11,6 @@ node_modules/
 package-lock.json
 .DS_Store
 
-reactgeoda/.yarn
-reactgeoda/library/.yarn
-reactgeoda/library/out
-reactgeoda/webapp/.next
-
 *.env
 .yarn/
 chatbot/dist/

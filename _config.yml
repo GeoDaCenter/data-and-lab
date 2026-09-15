@@ -39,7 +39,7 @@ links:
   #  url: /about
 
 # exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules', 'reactgeoda', 'chatbot']
+exclude: ['package.json', 'src', 'node_modules', 'chatbot']
 
 include:
 - data
