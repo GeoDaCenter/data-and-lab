@@ -73,7 +73,11 @@
 
   <link href="//d1a3f4spazzrp4.cloudfront.net/uber-fonts/4.0.0/superfine.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ "/assets/css/ai.css" | prepend: site.baseurl }}">
+  {% if page.geojson %}
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="{{ "/assets/css/map.css" | prepend: site.baseurl }}">
+  {% endif %}
+
   <style>
     table {
       border-collapse: collapse;
@@ -104,29 +108,5 @@
     table a:hover {
       color: #CCC;
     }
-
-    #root {
-      width: 100%;
-      height: 340px;
-      position: relative;
-      z-index: 5;
-      margin-top: -40px;
-    }
-
-    .geoda-kepler-map {
-      padding: 0 !important;
-      height: 100% !important;
-    }
-
-    .map-popover__layer-name {
-      visibility: hidden;
-    }
-
-    .map-popover__layer-info table {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-
-    /* Fix pop up and css issues. */
   </style>
 </head>
